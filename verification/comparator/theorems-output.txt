@@ -1,0 +1,124 @@
+./scripts/run_comparator.sh
+check_sandbox.sh: a write to a directory declared writable succeeded (as it must)
+check_sandbox.sh: a write outside the declared directories was refused (as it must)
+check_sandbox.sh: the sandbox holds
+Running as unit: run-u0.service; invocation ID: 3c0268b779f34a22990b34e06a090109
+Building AaronsonAmbainis.Comparator.Challenge
+✔ [8706/8707] Built AaronsonAmbainis.Conjecture (141s)
+⚠ [8707/8707] Built AaronsonAmbainis.Comparator.Challenge (19s)
+warning: AaronsonAmbainis/Comparator/Challenge.lean:23:8: declaration uses `sorry`
+warning: AaronsonAmbainis/Comparator/Challenge.lean:27:8: declaration uses `sorry`
+warning: AaronsonAmbainis/Comparator/Challenge.lean:31:8: declaration uses `sorry`
+warning: AaronsonAmbainis/Comparator/Challenge.lean:35:8: declaration uses `sorry`
+Build completed successfully (8707 jobs).
+Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, AaronsonAmbainisComparator.aaronson_ambainis, AaronsonAmbainisComparator.aaronson_ambainis_explicit, AaronsonAmbainisComparator.aaronson_ambainis_pm, AaronsonAmbainisComparator.aaronson_ambainis_of_fbsDegreeBound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from AaronsonAmbainis.Comparator.Challenge
+Building AaronsonAmbainis.Comparator.Solution
+✔ [8705/8730] Built AaronsonAmbainis.Defs (27s)
+✔ [8706/8732] Built AaronsonAmbainis.TwoSided.CauchySchwarz (27s)
+✔ [8707/8732] Built AaronsonAmbainis.Statements (11s)
+✔ [8708/8735] Built AaronsonAmbainis.Level.Integral (12s)
+✔ [8709/8735] Built AaronsonAmbainis.DetDefs (12s)
+✔ [8710/8735] Built AaronsonAmbainis.AllPairsDefs (13s)
+✔ [8711/8736] Built AaronsonAmbainis.DetBij.Basic (13s)
+✔ [8712/8736] Built AaronsonAmbainis.TwoSided.Basic (13s)
+✔ [8713/8739] Built AaronsonAmbainis.DetLow.Unit (15s)
+✔ [8714/8739] Built AaronsonAmbainis.DetLow.Basic (15s)
+✔ [8715/8739] Built AaronsonAmbainis.Level.Median (14s)
+✔ [8716/8739] Built AaronsonAmbainis.DetBij.Identity (15s)
+✔ [8717/8739] Built AaronsonAmbainis.Level.Rows (15s)
+✔ [8718/8739] Built AaronsonAmbainis.Level.Basic (15s)
+✔ [8719/8739] Built AaronsonAmbainis.TwoSided.Glue (17s)
+✔ [8720/8739] Built AaronsonAmbainis.TwoSided.Overlap (17s)
+✔ [8721/8739] Built AaronsonAmbainis.TwoSided.Antipodal (15s)
+✔ [8722/8739] Built AaronsonAmbainis.DetLow.Count (16s)
+✔ [8723/8739] Built AaronsonAmbainis.DetLow.Degree (12s)
+✔ [8724/8739] Built AaronsonAmbainis.DetLow.RowOps (12s)
+✔ [8725/8739] Built AaronsonAmbainis.DetLow.NonZero (9.9s)
+✔ [8726/8739] Built AaronsonAmbainis.DetBij.Perm (9.6s)
+✔ [8727/8739] Built AaronsonAmbainis.TwoSided.AllPairsCore (15s)
+✔ [8728/8739] Built AaronsonAmbainis.Level.AllPairs (15s)
+✔ [8729/8743] Built AaronsonAmbainis.TwoSided.RemoveWeights (13s)
+✔ [8730/8743] Built AaronsonAmbainis.DetBij.Main (13s)
+✔ [8731/8743] Built AaronsonAmbainis.DetLow.Main (12s)
+✔ [8732/8743] Built AaronsonAmbainis.TwoSided.AllPairs (12s)
+✔ [8733/8743] Built AaronsonAmbainis.Level.Integrated (13s)
+✔ [8734/8743] Built AaronsonAmbainis.Level.ThirdMoment (14s)
+✔ [8735/8745] Built AaronsonAmbainis.DetTheorem (12s)
+✔ [8736/8745] Built AaronsonAmbainis.Average.Coordinate (12s)
+✔ [8737/8745] Built AaronsonAmbainis.TwoSided.Main (9.6s)
+✔ [8738/8745] Built AaronsonAmbainis.Level.Increments (12s)
+✔ [8739/8745] Built AaronsonAmbainis.Average.Iterate (7.4s)
+✔ [8740/8745] Built AaronsonAmbainis.RowDefs (6.3s)
+✔ [8741/8745] Built AaronsonAmbainis.Level.Main (5.6s)
+✔ [8742/8748] Built AaronsonAmbainis.Average.Influence (7.7s)
+✔ [8743/8748] Built AaronsonAmbainis.Row.Markov (6.3s)
+✔ [8744/8753] Built AaronsonAmbainis.Average.Main (4.9s)
+✔ [8745/8753] Built AaronsonAmbainis.Row.Chi (6.1s)
+✔ [8746/8753] Built AaronsonAmbainis.Row.DisjointBlocks (5.8s)
+✔ [8747/8758] Built AaronsonAmbainis.Row.Degree (6.0s)
+✔ [8748/8758] Built AaronsonAmbainis.Row.Extension (7.0s)
+✔ [8749/8758] Built AaronsonAmbainis.Pack.Gate (11s)
+✔ [8750/8758] Built AaronsonAmbainis.Pack.Blocks (15s)
+✔ [8751/8759] Built AaronsonAmbainis.Row.Gadget (8.8s)
+✔ [8752/8760] Built AaronsonAmbainis.Row.Sensitivity (6.4s)
+✔ [8753/8760] Built AaronsonAmbainis.Pack.Scaled (6.4s)
+✔ [8754/8762] Built AaronsonAmbainis.Dual.Sets (6.1s)
+✔ [8755/8762] Built AaronsonAmbainis.Row.Block (6.0s)
+✔ [8756/8762] Built AaronsonAmbainis.Dual.Functional (5.8s)
+✔ [8757/8765] Built AaronsonAmbainis.Pack.Packing (6.9s)
+✔ [8758/8767] Built AaronsonAmbainis.Dual.Core (7.2s)
+✔ [8759/8767] Built AaronsonAmbainis.Row.Main (5.6s)
+✔ [8760/8767] Built AaronsonAmbainis.Pack.Main (5.2s)
+✔ [8761/8767] Built AaronsonAmbainis.Dual.RowAux (5.5s)
+✔ [8762/8767] Built AaronsonAmbainis.Dual.Cover (5.8s)
+✔ [8763/8767] Built AaronsonAmbainis.MainTheorem (6.9s)
+✔ [8764/8774] Built AaronsonAmbainis.Dual.Row (6.2s)
+✔ [8765/8774] Built AaronsonAmbainis.Bridge.Basic (7.8s)
+✔ [8766/8776] Built AaronsonAmbainis.Dual.Main (7.1s)
+✔ [8768/8780] Built AaronsonAmbainis.Bridge.Transport (15s)
+✔ [8769/8780] Built AaronsonAmbainis.Bridge.ZeroOne (17s)
+✔ [8770/8780] Built AaronsonAmbainis.Chain (10s)
+✔ [8771/8780] Built AaronsonAmbainis.Bridge.Fourier (10s)
+✔ [8773/8780] Built AaronsonAmbainis.Bridge.Algebra (13s)
+✔ [8774/8780] Built AaronsonAmbainis.Bridge.Affine (13s)
+✔ [8775/8780] Built AaronsonAmbainis.Bridge.Poly (6.2s)
+✔ [8776/8780] Built AaronsonAmbainis.Bridge.PrintedRow (13s)
+✔ [8777/8780] Built AaronsonAmbainis.Bridge.PrintedAA (13s)
+ℹ [8778/8780] Built AaronsonAmbainis.Bridge.Capstone (5.9s)
+info: AaronsonAmbainis/Bridge/Capstone.lean:100:0: AaronsonAmbainis.mainTheorem : AaronsonAmbainis.MainTheorem
+info: AaronsonAmbainis/Bridge/Capstone.lean:101:0: AaronsonAmbainis.mainTheoremImproved_of_rowBound : AaronsonAmbainis.RowBound → AaronsonAmbainis.MainTheoremImproved
+info: AaronsonAmbainis/Bridge/Capstone.lean:103:0: AaronsonAmbainis.Bridge.explicitBound : AaronsonAmbainis.ExplicitBound
+info: AaronsonAmbainis/Bridge/Capstone.lean:104:0: AaronsonAmbainis.Bridge.explicitBoundImproved_of_fbsDegreeBound : AaronsonAmbainis.FbsDegreeBound →
+  AaronsonAmbainis.ExplicitBoundImproved
+info: AaronsonAmbainis/Bridge/Capstone.lean:106:0: 'AaronsonAmbainis.mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:107:0: 'AaronsonAmbainis.mainTheoremImproved_of_rowBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:108:0: 'AaronsonAmbainis.Bridge.explicitBound_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:109:0: 'AaronsonAmbainis.Bridge.explicitBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:110:0: 'AaronsonAmbainis.Bridge.printedConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:111:0: 'AaronsonAmbainis.Bridge.explicitBoundPM_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:112:0: 'AaronsonAmbainis.Bridge.explicitBoundPM' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:113:0: 'AaronsonAmbainis.Bridge.explicitBoundImproved_sq_of_fbsDegreeBound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:114:0: 'AaronsonAmbainis.Bridge.explicitBoundImproved_of_fbsDegreeBound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8779/8780] Built AaronsonAmbainis.Main (3.9s)
+info: AaronsonAmbainis/Main.lean:53:0: 'AaronsonAmbainis.aaronson_ambainis' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Main.lean:54:0: 'AaronsonAmbainis.aaronson_ambainis_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Main.lean:55:0: 'AaronsonAmbainis.aaronson_ambainis_pm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Main.lean:56:0: 'AaronsonAmbainis.aaronson_ambainis_of_fbsDegreeBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8780/8780] Built AaronsonAmbainis.Comparator.Solution (3.9s)
+Build completed successfully (8780 jobs).
+Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, AaronsonAmbainisComparator.aaronson_ambainis, AaronsonAmbainisComparator.aaronson_ambainis_explicit, AaronsonAmbainisComparator.aaronson_ambainis_pm, AaronsonAmbainisComparator.aaronson_ambainis_of_fbsDegreeBound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from AaronsonAmbainis.Comparator.Solution
+Running nanoda kernel on solution
+Nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 12min 36.699s
+CPU time consumed: 10min 51.142s
+Memory peak: 512.0K
+Memory swap peak: 0B

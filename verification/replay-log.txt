@@ -1,0 +1,711 @@
+Recorded runs: the lines of the job reports behind the tables of notes/VERIFICATION.md.
+
+Source digest (computed by make digest on machines A to F; machine G received the same archive
+and did not compute it; the workflow runs of the last section worked on a checkout of the
+commit named there, in which make digest gives the same value):
+593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd
+
+The lines are copied from the reports that the jobs wrote. Left out: the progress lines of the
+downloads and of the clones except their last state, the two lines with which elan reports the
+installation of the toolchain (machines A to E), the per-file list of digests (it is the file
+source-digest.txt), the lines with which a job names an output file that it stores, and on
+every machine the line with the release number of git and two lines about its memory: one
+shows the memory of the host and not of the container, the other says that the limit of the
+container cannot be read. Lines longer than 220 characters are cut and end with [...]. Lines
+that begin with '    |' are output of the command named above them. Of the 41 output lines of
+'lean4lean --fresh' (40 lines 'lean4lean took N' for declarations that took long, and the
+count of the declarations) the report of job E shows the last 14.
+
+Jobs B and C were each started twice. The platform on which the containers ran stopped the
+containers of the first starts while the replays were running (a pre-emption), and started
+both jobs again from the beginning on new containers. The blocks B and C below are the reports
+of the second starts; the lines of the first starts are left out. Up to the replays the first
+starts ran the same commands as the second starts, each with exit status 0.
+
+Every machine received the same archive of the sources. The first lines of each job give its
+SHA-256 digest, the number of its files, and the SHA-256 digest of the list of the digests of
+these files; that list is the file archive-files.txt in this directory. The archive itself,
+the image from which machines F and G were started, and the program that started the jobs and
+wrote these reports are not part of the repository. The line 'declarations with a `#print
+axioms` line in the build output: 141' counts names: the sources hold 150 such commands, 119
+in AxiomReport.lean and 31 in six other files, and nine names are printed twice. 'machine
+asked for' is the size of the container that was requested; it is a reservation and not a
+limit, and on machine A one command used more memory than that. Memory figures are in units of
+2^30 bytes. 'largest process of the command (wait4)' is the largest resident memory that the
+operating system recorded for one process among the command and the processes it started;
+'sampled' is the largest value seen when the resident memory of the named process was read
+every 3 seconds.
+
+==============================================================================
+Machine A: Linux container, x86_64, 8 cores, 128 GB asked for; build, checks, count, kernel replay, the control
+==============================================================================
+=== job A: clean-room build, make check, make count, make replay, the control; started (UTC) 2026-10-22 01:31:40
+machine asked for: 8 cpu, 131072 MiB; time budget of the job: 3900s
+memory figures are in units of 2^30 bytes
+--- the sources: archive sha256 bf393285e8622e9d1c85c103004d199022ea67be95c115e4617884fc294d8fb0; files 121; sha256 of the list of per-file digests e5856c618fde2356c6d934cd2e021511be77532bc513c9480c0a351735dbc63e
+.lean files of the library tree: 86 = 84 of the library + 2 comparator modules
+--- machine and versions
+    | Linux 4.19.0-gvisor x86_64
+    | cores: 8
+    | user id: 0
+    | Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+    | Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)
+    | elan 4.2.4 (227caca13 2026-08-25)
+    | Python 3.11.12
+    | GNU Make 4.3
+--- make digest: exit=0 in 0s
+    | python3 scripts/source_digest.py . AaronsonAmbainis
+    | source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+--- lake exe cache get, started (UTC) 2026-10-22 01:31:53
+lake exe cache get: exit=0 in 122s
+    | Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 772 KB/s], Decompressed: 286
+    | Decompressed 8690 file(s)
+    | Already decompressed 8690 file(s)
+mathlib HEAD in the container: db584cd6d46c92f209a44c0f1c829460d327499d (the revision of lake-manifest.json: True)
+packages at the revisions of lake-manifest.json: 9 of 9
+compiled files (.olean) of Mathlib present after the download: 8322
+--- make check (= make imports, make audit, lake build, make axioms), started (UTC) 2026-10-22 01:33:55
+make check: exit=0 in 124s
+its parts, in seconds from its start: make imports 0 to 0; make audit 0 to 0; lake build 0 to 117; make axioms 117 to 124 (of which scripts/check_axioms.py from 124)
+    | python3 scripts/check_local_imports.py . AaronsonAmbainis
+    | import check: 84 modules, 2 comparator modules, 0 errors
+    | python3 scripts/check_no_placeholders.py AaronsonAmbainis AaronsonAmbainis.lean \
+    |       --holes AaronsonAmbainis/Comparator/Challenge.lean=4 --json notes/source-audit.json
+    | static audit: 86 files, 0 findings, 0 files that could not be read
+    | static audit: permitted open proofs: 4 in AaronsonAmbainis/Comparator/Challenge.lean
+    | lake build
+    | Build completed successfully (8790 jobs).
+    | ./scripts/print_axioms.sh 2>&1 | tee axiom-report.txt
+    | python3 scripts/check_axioms.py axiom-report.txt
+    | axiom check: 119 declarations reported, 0 errors; allowed axioms: Classical.choice, Quot.sound, propext
+the build part: modules named in lines 'Built AaronsonAmbainis…': 84; lines with 'warning': 0; with 'error': 0; with 'sorry': 0
+the build part: declarations with a `#print axioms` line: 141; exactly [propext, Classical.choice, Quot.sound]: 141; a proper subset of the three: 0; any other axiom: 0; occurrences of 'sorryAx': 0
+peak resident memory: largest process of the command (wait4): 7.8 GB; `lean` sampled every 3 s: at most 7.7 GB at 74s
+axiom-report.txt (written by make axioms): lines 168; declarations reported: 119; exactly [propext, Classical.choice, Quot.sound]: 119; a proper subset: 0; any other axiom: 0; occurrences of 'sorryAx': 0
+'AaronsonAmbainis.aaronson_ambainis' depends on axioms: [propext, Classical.choice, Quot.sound]   (exactly the three: True)
+'AaronsonAmbainis.aaronson_ambainis_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]   (exactly the three: True)
+'AaronsonAmbainis.aaronson_ambainis_pm' depends on axioms: [propext, Classical.choice, Quot.sound]   (exactly the three: True)
+'AaronsonAmbainis.aaronson_ambainis_of_fbsDegreeBound' depends on axioms: [propext, Classical.choice, Quot.sound]   (exactly the three: True)
+notes/source-audit.json after make audit: sha256 9b061ac82b283fa8e47450fd4b312c945977057025bfb34f7b30c8ea63b0af03; identical to the file of the archive: True
+--- make count: exit=0 in 22s
+    | lake env lean --run scripts/count_declarations.lean
+    | modules with prefix AaronsonAmbainis: 84
+    | constants in these modules: 761; unsafe or partial (skipped by a replay): 0
+    | definitions 113; theorems 648; axioms 0; opaque 0; quot 0
+    | inductive types 0 in 0 blocks; constructors 0; recursors 0
+    | declarations a replay adds (definitions + theorems + axioms + opaque + quot + inductive blocks): 761
+    | final theorem: AaronsonAmbainis.aaronson_ambainis (theorem, in AaronsonAmbainis.Main)
+    | final theorem: AaronsonAmbainis.aaronson_ambainis_pm (theorem, in AaronsonAmbainis.Main)
+    | final theorem: AaronsonAmbainis.aaronson_ambainis_explicit (theorem, in AaronsonAmbainis.Main)
+    | final theorem: AaronsonAmbainis.aaronson_ambainis_of_fbsDegreeBound (theorem, in AaronsonAmbainis.Main)
+--- make replay (lake env leanchecker -v AaronsonAmbainis; LEAN_NUM_THREADS not set), started (UTC) 2026-10-22 01:36:21
+make replay: exit=0 in 428s; lines 'replaying …': 84; different modules named: 84
+    | lake env leanchecker -v AaronsonAmbainis
+peak resident memory: largest process of the command (wait4): 173.3 GB; `leanchecker` sampled every 3 s: at most 172.8 GB at 355s
+--- the control (verification/control, the files of the archive as they are), started (UTC) 2026-10-22 01:43:29
+lake build Ctl.Good.Base Ctl.Good.Top Ctl.Bad.Base Ctl.Bad.Top: exit=0 in 4s (exit 0 means: the build ACCEPTS the false declaration)
+    | ℹ [2/5] Built Ctl.Good.Base (745ms)
+    | info: Ctl/Good/Base.lean:3:0: 'Ctl.good' does not depend on any axioms
+    | ℹ [3/5] Built Ctl.Good.Top (532ms)
+    | info: Ctl/Good/Top.lean:5:0: 'Ctl.goodTop' does not depend on any axioms
+    | ℹ [4/5] Built Ctl.Bad.Base (2.2s)
+    | info: Ctl/Bad/Base.lean:9:0: 'Ctl.bad' does not depend on any axioms
+    | ℹ [5/5] Built Ctl.Bad.Top (1.3s)
+    | info: Ctl/Bad/Top.lean:6:0: 'Ctl.top' does not depend on any axioms
+    | Build completed successfully (5 jobs).
+declarations reported as depending on no axiom: ['Ctl.bad', 'Ctl.good', 'Ctl.goodTop', 'Ctl.top']
+lake env leanchecker -v Ctl.Good: exit=0 in 2s; required: exit 0; as required: True
+    | replaying Ctl.Good.Top
+    | replaying Ctl.Good.Base
+lake env leanchecker -v Ctl.Bad: exit=1 in 4s; required: exit 1 and the kernel's message for Ctl.bad; as required: True
+    | leanchecker found a problem in Ctl.Bad.Base
+    | replaying Ctl.Bad.Top
+    | replaying Ctl.Bad.Base
+    | uncaught exception: while replaying declaration 'Ctl.bad':
+    | (kernel) declaration type mismatch, 'Ctl.bad' has type
+    |   True
+    | but it is expected to have type
+    |   False
+lake env leanchecker -v Ctl.Bad.Top: exit=0 in 2s; required: exit 0; as required: True
+    | replaying Ctl.Bad.Top
+lake env leanchecker --fresh Ctl.Good.Top: exit=0 in 54s; required: exit 0; as required: True
+lake env leanchecker --fresh Ctl.Bad.Top: exit=1 in 93s; required: exit 1 and the kernel's message for Ctl.bad; as required: True
+    | uncaught exception: while replaying declaration 'Ctl.bad':
+    | (kernel) declaration type mismatch, 'Ctl.bad' has type
+    |   True
+    | but it is expected to have type
+    |   False
+CONTROL PASSED
+--- LEAN_NUM_THREADS=1 make replay (one module after the other), started (UTC) 2026-10-22 01:46:08
+LEAN_NUM_THREADS=1 make replay: exit=0 in 656s; lines 'replaying …': 84; different modules named: 84
+    | lake env leanchecker -v AaronsonAmbainis
+peak resident memory: largest process of the command (wait4): 7.4 GB; `leanchecker` sampled every 3 s: at most 7.4 GB at 646s
+=== SUMMARY of job A
+source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+lake exe cache get: exit=0 in 122s; packages at the manifest revisions: 9 of 9; .olean files of Mathlib: 8322
+make check: exit=0 in 124s; 84 modules built; Build completed successfully (8790 jobs).; axiom check: 119 declarations reported, 0 errors; allowed axioms: Classical.choice, Quot.sound, propext
+make count: exit=0; constants in these modules: 761; unsafe or partial (skipped by a replay): 0
+make replay: exit=0 in 428s; modules replayed: 84; largest process 173.3 GB
+the control with leanchecker (the build accepts the false declaration; the replay rejects it with and without --fresh; without --fresh an importing module alone passes): PASSED
+LEAN_NUM_THREADS=1 make replay: exit=0 in 656s; modules replayed: 84; largest process 7.4 GB
+wall time of the job: 1523s
+=== job A finished (UTC) 2026-10-22 01:57:03
+
+==============================================================================
+Machine B: Linux container, x86_64, 8 cores, 64 GB asked for; kernel replay from an empty environment (make replay-fresh); the second start of the job
+==============================================================================
+=== job B: clean-room build, then make replay-fresh; started (UTC) 2026-10-22 01:54:53
+machine asked for: 8 cpu, 65536 MiB; time budget of the job: 3600s
+memory figures are in units of 2^30 bytes
+--- the sources: archive sha256 bf393285e8622e9d1c85c103004d199022ea67be95c115e4617884fc294d8fb0; files 121; sha256 of the list of per-file digests e5856c618fde2356c6d934cd2e021511be77532bc513c9480c0a351735dbc63e
+.lean files of the library tree: 86 = 84 of the library + 2 comparator modules
+--- machine and versions
+    | Linux 4.19.0-gvisor x86_64
+    | cores: 8
+    | user id: 0
+    | Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+    | Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)
+    | elan 4.2.4 (227caca13 2026-08-25)
+    | Python 3.11.12
+    | GNU Make 4.3
+--- make digest: exit=0 in 0s
+    | python3 scripts/source_digest.py . AaronsonAmbainis
+    | source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+--- lake exe cache get, started (UTC) 2026-10-22 01:55:13
+lake exe cache get: exit=0 in 155s
+    | Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 291 KB/s], Decompressed: 1944
+    | Decompressed 8690 file(s)
+    | Already decompressed 8690 file(s)
+mathlib HEAD in the container: db584cd6d46c92f209a44c0f1c829460d327499d (the revision of lake-manifest.json: True)
+packages at the revisions of lake-manifest.json: 9 of 9
+compiled files (.olean) of Mathlib present after the download: 8322
+--- lake build (default target = the whole library), started (UTC) 2026-10-22 01:57:48
+lake build: exit=0 in 151s; modules named in lines 'Built AaronsonAmbainis…': 84; lines with 'warning': 0; with 'error': 0; with 'sorry': 0
+    | Build completed successfully (8790 jobs).
+declarations with a `#print axioms` line in the build output: 141; exactly [propext, Classical.choice, Quot.sound]: 141; any other axiom: 0
+peak resident memory: largest process of the command (wait4): 7.8 GB; `lean` sampled every 3 s: at most 7.7 GB at 39s
+--- make replay-fresh (lake env leanchecker --fresh AaronsonAmbainis.Main), started (UTC) 2026-10-22 02:00:20
+make replay-fresh (lake env leanchecker --fresh AaronsonAmbainis.Main): exit=0 in 1742s; output lines: 1
+    | lake env leanchecker --fresh AaronsonAmbainis.Main
+peak resident memory: largest process of the command (wait4): 8.7 GB; `leanchecker` sampled every 3 s: at most 8.7 GB at 1453s
+=== SUMMARY of job B
+source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+lake exe cache get: exit=0 in 155s; packages at the manifest revisions: 9 of 9; .olean files of Mathlib: 8322
+lake build: exit=0 in 151s; 84 modules of the library built; Build completed successfully (8790 jobs).
+make replay-fresh (lake env leanchecker --fresh AaronsonAmbainis.Main): exit=0 in 1742s; largest process 8.7 GB
+wall time of the job: 2068s
+=== job B finished (UTC) 2026-10-22 02:29:22
+
+==============================================================================
+Machine C: Linux container, x86_64, 8 cores, 64 GB asked for; kernel replay of the whole library from an empty environment; the second start of the job
+==============================================================================
+=== job C: clean-room build, then leanchecker --fresh AaronsonAmbainis (the root file: every module of the library); started (UTC) 2026-10-22 01:54:52
+machine asked for: 8 cpu, 65536 MiB; time budget of the job: 3600s
+memory figures are in units of 2^30 bytes
+--- the sources: archive sha256 bf393285e8622e9d1c85c103004d199022ea67be95c115e4617884fc294d8fb0; files 121; sha256 of the list of per-file digests e5856c618fde2356c6d934cd2e021511be77532bc513c9480c0a351735dbc63e
+.lean files of the library tree: 86 = 84 of the library + 2 comparator modules
+--- machine and versions
+    | Linux 4.19.0-gvisor x86_64
+    | cores: 8
+    | user id: 0
+    | Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+    | Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)
+    | elan 4.2.4 (227caca13 2026-08-25)
+    | Python 3.11.12
+    | GNU Make 4.3
+--- make digest: exit=0 in 0s
+    | python3 scripts/source_digest.py . AaronsonAmbainis
+    | source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+--- lake exe cache get, started (UTC) 2026-10-22 01:55:08
+lake exe cache get: exit=0 in 139s
+    | Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 281 KB/s], Decompressed: 1098
+    | Decompressed 8690 file(s)
+    | Already decompressed 8690 file(s)
+mathlib HEAD in the container: db584cd6d46c92f209a44c0f1c829460d327499d (the revision of lake-manifest.json: True)
+packages at the revisions of lake-manifest.json: 9 of 9
+compiled files (.olean) of Mathlib present after the download: 8322
+--- lake build (default target = the whole library), started (UTC) 2026-10-22 01:57:27
+lake build: exit=0 in 148s; modules named in lines 'Built AaronsonAmbainis…': 84; lines with 'warning': 0; with 'error': 0; with 'sorry': 0
+    | Build completed successfully (8790 jobs).
+declarations with a `#print axioms` line in the build output: 141; exactly [propext, Classical.choice, Quot.sound]: 141; any other axiom: 0
+peak resident memory: largest process of the command (wait4): 7.8 GB; `lean` sampled every 3 s: at most 7.7 GB at 96s
+--- lake env leanchecker --fresh AaronsonAmbainis, started (UTC) 2026-10-22 01:59:55
+lake env leanchecker --fresh AaronsonAmbainis: exit=0 in 1677s; output lines: 0
+peak resident memory: largest process of the command (wait4): 8.7 GB; `leanchecker` sampled every 3 s: at most 8.7 GB at 1403s
+=== SUMMARY of job C
+source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+lake exe cache get: exit=0 in 139s; packages at the manifest revisions: 9 of 9; .olean files of Mathlib: 8322
+lake build: exit=0 in 148s; 84 modules of the library built; Build completed successfully (8790 jobs).
+lake env leanchecker --fresh AaronsonAmbainis: exit=0 in 1677s; largest process 8.7 GB
+wall time of the job: 1980s
+=== job C finished (UTC) 2026-10-22 02:27:52
+
+==============================================================================
+Machine D: Linux container, x86_64, 8 cores, 128 GB asked for; second kernel (lean4lean): the control, every module
+==============================================================================
+=== job D: second kernel (lean4lean): its control; clean-room build; lean4lean -v AaronsonAmbainis; started (UTC) 2026-10-22 01:31:42
+machine asked for: 8 cpu, 131072 MiB; time budget of the job: 3600s
+memory figures are in units of 2^30 bytes
+--- the sources: archive sha256 bf393285e8622e9d1c85c103004d199022ea67be95c115e4617884fc294d8fb0; files 121; sha256 of the list of per-file digests e5856c618fde2356c6d934cd2e021511be77532bc513c9480c0a351735dbc63e
+.lean files of the library tree: 86 = 84 of the library + 2 comparator modules
+--- machine and versions
+    | Linux 4.19.0-gvisor x86_64
+    | cores: 8
+    | user id: 0
+    | Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+    | Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)
+    | elan 4.2.4 (227caca13 2026-08-25)
+    | Python 3.11.12
+    | GNU Make 4.3
+--- make digest: exit=0 in 0s
+    | python3 scripts/source_digest.py . AaronsonAmbainis
+    | source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+--- lean4lean: clone and checkout: exit=0 in 0s (commit and its own toolchain file follow)
+    | 8223d223ed98661882e95d9d6a7126df7097cd76
+    | leanprover/lean4:v4.33.0-rc2
+toolchain file of the lean4lean checkout overwritten with: leanprover/lean4:v4.33.0
+lake build lean4lean (its dependencies as pinned in its manifest): exit=0 in 26s
+    | info: batteries: checking out revision '76e1c118b0700b4ceafe99532e887d6431625e1a'
+    | ✔ [58/59] Built Main:c.o (408ms)
+    | ✔ [59/59] Built lean4lean:exe (2.6s)
+    | Build completed successfully (59 jobs).
+lean4lean executable present: True
+--- the control (verification/control, the files of the archive as they are), started (UTC) 2026-10-22 01:32:22
+lake build Ctl.Good.Base Ctl.Good.Top Ctl.Bad.Base Ctl.Bad.Top: exit=0 in 3s (exit 0 means: the build ACCEPTS the false declaration)
+    | ℹ [5/5] Built Ctl.Bad.Top (1.1s)
+    | info: Ctl/Bad/Top.lean:6:0: 'Ctl.top' does not depend on any axioms
+    | Build completed successfully (5 jobs).
+lean4lean Ctl.Good: exit=0 in 2s; required: exit 0; as required: True
+    | checked 2 declarations
+lean4lean Ctl.Bad: exit=1 in 6s; required: an exit status other than 0 and an output that names Ctl.bad; as required: True
+    | at Ctl.bad: (kernel) declaration type mismatch, 'Ctl.bad' has type
+    |   [Error pretty printing expression: (`Inhabited.default` for `IO.Error`). Falling back to raw printer.]
+    |   True
+    | but it is expected to have type
+    |   [Error pretty printing expression: (`Inhabited.default` for `IO.Error`). Falling back to raw printer.]
+    |   False
+lean4lean --fresh Ctl.Good.Top: exit=0 in 77s; required: exit 0; as required: True
+    | checked 63938 declarations
+lean4lean --fresh Ctl.Bad.Top: exit=1 in 124s; required: an exit status other than 0 and an output that names Ctl.bad; as required: True
+    | uncaught exception: at Ctl.bad: (kernel) declaration type mismatch, 'Ctl.bad' has type
+    |   [Error pretty printing expression: (`Inhabited.default` for `IO.Error`). Falling back to raw printer.]
+    |   True
+    | but it is expected to have type
+    |   [Error pretty printing expression: (`Inhabited.default` for `IO.Error`). Falling back to raw printer.]
+    |   False
+CONTROL PASSED
+--- lake exe cache get, started (UTC) 2026-10-22 01:35:53
+lake exe cache get: exit=0 in 107s
+    | Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 486 KB/s], Decompressed: 1114
+    | Decompressed 8690 file(s)
+    | Already decompressed 8690 file(s)
+mathlib HEAD in the container: db584cd6d46c92f209a44c0f1c829460d327499d (the revision of lake-manifest.json: True)
+packages at the revisions of lake-manifest.json: 9 of 9
+compiled files (.olean) of Mathlib present after the download: 8322
+--- lake build (default target = the whole library), started (UTC) 2026-10-22 01:37:40
+lake build: exit=0 in 121s; modules named in lines 'Built AaronsonAmbainis…': 84; lines with 'warning': 0; with 'error': 0; with 'sorry': 0
+    | Build completed successfully (8790 jobs).
+declarations with a `#print axioms` line in the build output: 141; exactly [propext, Classical.choice, Quot.sound]: 141; any other axiom: 0
+peak resident memory: largest process of the command (wait4): 7.7 GB; `lean` sampled every 3 s: at most 7.7 GB at 43s
+--- LEAN_NUM_THREADS=4 lean4lean -v AaronsonAmbainis (every module of the library on top of its imports), started (UTC) 2026-10-22 01:39:41
+lean4lean -v AaronsonAmbainis: exit=0 in 396s; lines 'replaying …': 84; different modules named: 84; lines 'adding …': 761; other lines: 1
+    | checked 761 declarations
+    | adding thmDecl AaronsonAmbainis.aaronson_ambainis_pm
+    | adding thmDecl AaronsonAmbainis.aaronson_ambainis
+    | adding thmDecl AaronsonAmbainis.aaronson_ambainis_explicit
+    | adding thmDecl AaronsonAmbainis.aaronson_ambainis_of_fbsDegreeBound
+peak resident memory: largest process of the command (wait4): 60.3 GB; `lean4lean` sampled every 3 s: at most 59.6 GB at 372s
+=== SUMMARY of job D
+source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+lean4lean at 8223d223ed98661882e95d9d6a7126df7097cd76 built with leanprover/lean4:v4.33.0: True (exit=0, 26s)
+the control with lean4lean (good pair accepted, bad pair rejected, with and without --fresh): PASSED
+lake exe cache get: exit=0 in 107s; packages at the manifest revisions: 9 of 9; .olean files of Mathlib: 8322
+lake build: exit=0 in 121s; 84 modules of the library built; Build completed successfully (8790 jobs).
+lean4lean -v AaronsonAmbainis: exit=0 in 396s; modules: 84; checked 761 declarations; largest process 60.3 GB
+wall time of the job: 875s
+=== job D finished (UTC) 2026-10-22 01:46:17
+
+==============================================================================
+Machine E: Linux container, x86_64, 8 cores, 64 GB asked for; second kernel (lean4lean) from an empty environment
+==============================================================================
+=== job E: second kernel (lean4lean): clean-room build; lean4lean --fresh AaronsonAmbainis.Main; started (UTC) 2026-10-22 01:31:43
+machine asked for: 8 cpu, 65536 MiB; time budget of the job: 4200s
+memory figures are in units of 2^30 bytes
+--- the sources: archive sha256 bf393285e8622e9d1c85c103004d199022ea67be95c115e4617884fc294d8fb0; files 121; sha256 of the list of per-file digests e5856c618fde2356c6d934cd2e021511be77532bc513c9480c0a351735dbc63e
+.lean files of the library tree: 86 = 84 of the library + 2 comparator modules
+--- machine and versions
+    | Linux 4.19.0-gvisor x86_64
+    | cores: 8
+    | user id: 0
+    | Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+    | Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)
+    | elan 4.2.4 (227caca13 2026-08-25)
+    | Python 3.11.12
+    | GNU Make 4.3
+--- make digest: exit=0 in 0s
+    | python3 scripts/source_digest.py . AaronsonAmbainis
+    | source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+--- lean4lean: clone and checkout: exit=0 in 2s (commit and its own toolchain file follow)
+    | 8223d223ed98661882e95d9d6a7126df7097cd76
+    | leanprover/lean4:v4.33.0-rc2
+toolchain file of the lean4lean checkout overwritten with: leanprover/lean4:v4.33.0
+lake build lean4lean (its dependencies as pinned in its manifest): exit=0 in 34s
+    | info: batteries: checking out revision '76e1c118b0700b4ceafe99532e887d6431625e1a'
+    | ✔ [58/59] Built Main:c.o (588ms)
+    | ✔ [59/59] Built lean4lean:exe (3.6s)
+    | Build completed successfully (59 jobs).
+lean4lean executable present: True
+--- lake exe cache get, started (UTC) 2026-10-22 01:32:38
+lake exe cache get: exit=0 in 136s
+    | Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 206 KB/s], Decompressed: 1317
+    | Decompressed 8690 file(s)
+    | Already decompressed 8690 file(s)
+mathlib HEAD in the container: db584cd6d46c92f209a44c0f1c829460d327499d (the revision of lake-manifest.json: True)
+packages at the revisions of lake-manifest.json: 9 of 9
+compiled files (.olean) of Mathlib present after the download: 8322
+--- lake build (default target = the whole library), started (UTC) 2026-10-22 01:34:55
+lake build: exit=0 in 146s; modules named in lines 'Built AaronsonAmbainis…': 84; lines with 'warning': 0; with 'error': 0; with 'sorry': 0
+    | Build completed successfully (8790 jobs).
+declarations with a `#print axioms` line in the build output: 141; exactly [propext, Classical.choice, Quot.sound]: 141; any other axiom: 0
+peak resident memory: largest process of the command (wait4): 7.8 GB; `lean` sampled every 3 s: at most 7.7 GB at 91s
+--- lean4lean --fresh AaronsonAmbainis.Main (everything behind Main.lean, Lean core and Mathlib included, from an empty environment), started (UTC) 2026-10-22 01:37:21
+lean4lean --fresh AaronsonAmbainis.Main: exit=0 in 2299s; output lines: 41
+fresh says: AaronsonAmbainis.Main:thmDecl MultilinearMap.fromDirectSumEquiv_symm_apply: lean4lean took 1682
+fresh says: AaronsonAmbainis.Main:thmDecl Field.Emb.Cardinal.succEquiv_coherence: lean4lean took 1234
+fresh says: AaronsonAmbainis.Main:thmDecl PiTensorProduct.ofDirectSumEquiv_symm_lof_tprod: lean4lean took 2839
+fresh says: AaronsonAmbainis.Main:defnDecl AffineIsometryEquiv.ofEq: lean4lean took 1071
+fresh says: AaronsonAmbainis.Main:thmDecl AffineIsometryEquiv.ofEq_symm: lean4lean took 1353
+fresh says: AaronsonAmbainis.Main:thmDecl PadicInt.coe_adicCompletionIntegersEquiv_apply: lean4lean took 38011
+fresh says: AaronsonAmbainis.Main:thmDecl LinearMap.lTensor_tensor: lean4lean took 1507
+fresh says: AaronsonAmbainis.Main:thmDecl SheafOfModules.pushforwardCongr_symm: lean4lean took 3552
+fresh says: AaronsonAmbainis.Main:defnDecl SheafOfModules.sheafificationCompPullback: lean4lean took 1223
+fresh says: AaronsonAmbainis.Main:thmDecl CoalgCat.MonoidalCategoryAux.comul_tensorObj_tensorObj_right: lean4lean took 1018
+fresh says: AaronsonAmbainis.Main:thmDecl AddCommGrpCat.Colimits.Quot.desc_quotQuotUliftAddEquiv: lean4lean took 1227
+fresh says: AaronsonAmbainis.Main:thmDecl IsDedekindDomain.HeightOneSpectrum.adicCompletion.coe_valueGroupEquiv: lean4lean took 2353
+fresh says: AaronsonAmbainis.Main:thmDecl Unitary.conjStarAlgAut_symm_unitaryLinearIsometryEquiv: lean4lean took 2732
+fresh says: checked 750881 declarations
+peak resident memory: largest process of the command (wait4): 9.0 GB; `lean4lean` sampled every 3 s: at most 9.0 GB at 1920s
+=== SUMMARY of job E
+source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+lean4lean at 8223d223ed98661882e95d9d6a7126df7097cd76 built with leanprover/lean4:v4.33.0: True (exit=0, 34s)
+lake exe cache get: exit=0 in 136s; packages at the manifest revisions: 9 of 9; .olean files of Mathlib: 8322
+lake build: exit=0 in 146s; 84 modules of the library built; Build completed successfully (8790 jobs).
+lean4lean --fresh AaronsonAmbainis.Main: exit=0 in 2299s; checked 750881 declarations; largest process 9.0 GB
+wall time of the job: 2638s
+=== job E finished (UTC) 2026-10-22 02:15:40
+
+==============================================================================
+Machine F: Linux container, x86_64, 8 cores, 96 GB asked for; comparator WITHOUT its sandbox, the four theorems
+==============================================================================
+=== job F: comparator on the four final theorems, WITHOUT its sandbox; then lake build and make replay; started (UTC) 2026-10-22 01:31:44
+machine asked for: 8 cpu, 98304 MiB; time budget of the job: 3600s
+memory figures are in units of 2^30 bytes
+--- the sources: archive sha256 bf393285e8622e9d1c85c103004d199022ea67be95c115e4617884fc294d8fb0; files 121; sha256 of the list of per-file digests e5856c618fde2356c6d934cd2e021511be77532bc513c9480c0a351735dbc63e
+.lean files of the library tree: 86 = 84 of the library + 2 comparator modules
+--- machine and versions
+    | Linux 4.19.0-gvisor x86_64
+    | cores: 8
+    | user id: 0
+    | Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+    | Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)
+    | elan 4.2.4 (227caca13 2026-08-25)
+    | Python 3.11.12
+    | GNU Make 4.3
+    | security modules of the kernel: cat: /sys/kernel/security/lsm: No such file or directory
+--- tools
+comparator/PINS.env of the archive equals the revisions with which the tools were built: True
+nanoda: HEAD 68d5ca9db226849b41a6fff59d796ff19d0a8840 (equals NANODA_REV: True)
+lean4export: HEAD 15f6055e299ad5b89345e533cc2192f4cc00f659 (equals LEAN4EXPORT_REV: True); lean-toolchain: leanprover/lean4:v4.33.0
+comparator: HEAD 71b52ec29e06d4b7d882726553b1ceb99a2499e0 (equals COMPARATOR_REV: True); lean-toolchain: leanprover/lean4:v4.30.0-rc2
+    |       path    github.com/zouuup/landrun/cmd/landrun
+    |       mod     github.com/zouuup/landrun       v0.1.16-0.20251001204025-5ed4a3db3a4a   h1:TR9nUCFAwPUh66cEx+grXTJ9Dz7zeny9QkWZ/g9p/5E=
+    | cargo 1.99.0 (5f94df478 2026-08-27)
+    | go version go1.25.12 linux/amd64
+    | on PATH: landrun
+    | on PATH: lean4export
+    | on PATH: nanoda_bin
+    | on PATH: comparator
+landrun: the module version names the revision 5ed4a3db3a4a: True
+all tool revisions as pinned: True
+--- the tree of the archive
+--- make digest: exit=0 in 0s
+    | python3 scripts/source_digest.py . AaronsonAmbainis
+    | source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+make imports: exit=0 in 0s
+    | python3 scripts/check_local_imports.py . AaronsonAmbainis
+    | import check: 84 modules, 2 comparator modules, 0 errors
+make audit: exit=0 in 0s
+    | python3 scripts/check_no_placeholders.py AaronsonAmbainis AaronsonAmbainis.lean \
+    |       --holes AaronsonAmbainis/Comparator/Challenge.lean=4 --json notes/source-audit.json
+    | static audit: 86 files, 0 findings, 0 files that could not be read
+    | static audit: permitted open proofs: 4 in AaronsonAmbainis/Comparator/Challenge.lean
+--- does the real landrun confine a process here? (scripts/check_sandbox.sh)
+scripts/check_sandbox.sh: exit=1 in 0s
+    | check_sandbox.sh: a write to a directory declared writable succeeded (as it must)
+    | check_sandbox.sh: a write outside the declared directories SUCCEEDED: there is no sandbox here
+    | check_sandbox.sh: the sandbox does NOT hold; a comparator run on this machine is no certificate
+landrun without --best-effort (it must fail on a kernel without Landlock):
+    | [landrun:error] 2026/10/22 01:31:48 Failed to apply sandbox: failed to apply Landlock filesystem restrictions: missing kernel Landlock support. Got Landlock ABI v0, wanted {Landlock V5; FS: all; Net:  [...]
+--- make comparator (the sandboxed run) on this machine: exit=2 in 0s
+    | ./scripts/run_comparator.sh
+    | run_comparator.sh: comparator must not be run by a privileged user
+    | make: *** [Makefile:52: comparator] Error 2
+--- lake exe cache get, started (UTC) 2026-10-22 01:31:48
+lake exe cache get: exit=0 in 144s
+    | Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 315 KB/s], Decompressed: 2952
+    | Decompressed 8690 file(s)
+    | Already decompressed 8690 file(s)
+mathlib HEAD in the container: db584cd6d46c92f209a44c0f1c829460d327499d (the revision of lake-manifest.json: True)
+packages at the revisions of lake-manifest.json: 9 of 9
+compiled files (.olean) of Mathlib present after the download: 8322
+--- make comparator-unsandboxed (scripts/run_comparator_unsandboxed.sh on comparator/config.json), on a pseudo-terminal, started (UTC) 2026-10-22 01:34:12
+{
+  "challenge_module": "AaronsonAmbainis.Comparator.Challenge",
+  "solution_module": "AaronsonAmbainis.Comparator.Solution",
+  "theorem_names": [
+    "AaronsonAmbainisComparator.aaronson_ambainis",
+    "AaronsonAmbainisComparator.aaronson_ambainis_explicit",
+    "AaronsonAmbainisComparator.aaronson_ambainis_pm",
+    "AaronsonAmbainisComparator.aaronson_ambainis_of_fbsDegreeBound"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
+make comparator-unsandboxed: exit=0 in 287s; output lines: 45; the line 'Your solution is okay!' is present: True
+peak resident memory: largest process of the command (wait4): 7.8 GB; `lean` sampled every 3 s: at most 7.7 GB at 88s; `lean4export` sampled every 3 s: at most 7.8 GB at 194s; `nanoda_bin` sampled every 3 s: at most 0.3  [...]
+output lines of interest, with the elapsed time:
+    | [     0s] ./scripts/run_comparator_unsandboxed.sh
+    | [     0s] run_comparator_unsandboxed.sh: NO SANDBOX. This run tests the setup and certifies nothing.
+    | [     2s] Building AaronsonAmbainis.Comparator.Challenge
+    | [     2s] fake_landrun.sh: NO SANDBOX, running: lake build AaronsonAmbainis.Comparator.Challenge
+    | [    27s] ⚠ [8707/8707] Built AaronsonAmbainis.Comparator.Challenge
+    | [    27s] warning: AaronsonAmbainis/Comparator/Challenge.lean:23:8: declaration uses `sorry`
+    | [    27s] warning: AaronsonAmbainis/Comparator/Challenge.lean:27:8: declaration uses `sorry`
+    | [    27s] warning: AaronsonAmbainis/Comparator/Challenge.lean:31:8: declaration uses `sorry`
+    | [    27s] warning: AaronsonAmbainis/Comparator/Challenge.lean:35:8: declaration uses `sorry`
+    | [    27s] Build completed successfully (8707 jobs).
+    | [    27s] Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, AaronsonAmbainisComparator.aaronson_ambainis, AaronsonAmbainisComparator.aaronson_ambainis_explicit, Aar [...]
+    | [    39s] Building AaronsonAmbainis.Comparator.Solution
+    | [    39s] fake_landrun.sh: NO SANDBOX, running: lake build AaronsonAmbainis.Comparator.Solution
+    | [   173s] Build completed successfully (8780 jobs).
+    | [   173s] Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, AaronsonAmbainisComparator.aaronson_ambainis, AaronsonAmbainisComparator.aaronson_ambainis_explicit, Aar [...]
+    | [   212s] Running nanoda kernel on solution
+    | [   212s] fake_landrun.sh: NO SANDBOX, running: nanoda_bin /tmp/tmp.XXnYQ0ni
+    | [   241s] Nanoda kernel accepts the solution
+    | [   241s] Running Lean default kernel on solution.
+    | [   287s] Lean default kernel accepts the solution
+    | [   287s] Your solution is okay!
+modules named in lines 'Built AaronsonAmbainis…': 3; lines 'declaration uses `sorry`': 4; lines with 'error': 0; declarations with a `#print axioms` line: 13, with an axiom outside the three: 0
+the last 8 output lines:
+    | [   173s] Build completed successfully (8780 jobs).
+    | [   173s] Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, AaronsonAmbainisComparator.aaronson_ambainis, AaronsonAmbainisComparator.aaronson_ambainis_explicit, Aaronso [...]
+    | [   212s] Running nanoda kernel on solution
+    | [   212s] fake_landrun.sh: NO SANDBOX, running: nanoda_bin /tmp/tmp.XXnYQ0ni
+    | [   241s] Nanoda kernel accepts the solution
+    | [   241s] Running Lean default kernel on solution.
+    | [   287s] Lean default kernel accepts the solution
+    | [   287s] Your solution is okay!
+--- lake build (default target = the whole library), started (UTC) 2026-10-22 01:39:00
+lake build: exit=0 in 42s; modules named in lines 'Built AaronsonAmbainis…': 10; lines with 'warning': 0; with 'error': 0; with 'sorry': 0
+    | Build completed successfully (8790 jobs).
+declarations with a `#print axioms` line in the build output: 141; exactly [propext, Classical.choice, Quot.sound]: 141; any other axiom: 0
+peak resident memory: largest process of the command (wait4): 7.8 GB; `lean` sampled every 3 s: at most 7.4 GB at 32s
+--- LEAN_NUM_THREADS=4 make replay, after the comparator run and lake build, started (UTC) 2026-10-22 01:39:41
+LEAN_NUM_THREADS=4 make replay: exit=0 in 579s; lines 'replaying …': 86; different modules named: 86; of these comparator modules: ['AaronsonAmbainis.Comparator.Challenge', 'AaronsonAmbainis.Comparator.Solution']
+    | lake env leanchecker -v AaronsonAmbainis
+peak resident memory: largest process of the command (wait4): 28.8 GB; `leanchecker` sampled every 3 s: at most 28.7 GB at 507s
+=== SUMMARY of job F
+tools at the revisions of comparator/PINS.env: True
+source digest: 593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd (87 files)
+scripts/check_sandbox.sh with the real landrun: exit=1 (0 = the sandbox holds; 1 = no sandbox on this machine)
+make comparator (sandboxed) on this machine: exit=2; run_comparator.sh: comparator must not be run by a privileged user
+lake exe cache get: exit=0 in 144s; packages at the manifest revisions: 9 of 9; .olean files of Mathlib: 8322
+make comparator-unsandboxed (four theorems): exit=0 in 287s; 'Your solution is okay!': True; sandbox on this machine: NO
+lake build: exit=0 in 42s; 10 modules of the library built; Build completed successfully (8790 jobs).
+LEAN_NUM_THREADS=4 make replay after the comparator run: exit=0 in 579s; modules replayed: 86
+wall time of the job: 1056s
+=== job F finished (UTC) 2026-10-22 01:49:20
+
+==============================================================================
+Machine G: Linux container, x86_64, 8 cores, 32 GB asked for; comparator WITHOUT its sandbox, the controls
+==============================================================================
+=== job G: the five controls of the comparator run, WITHOUT the sandbox; started (UTC) 2026-10-22 01:31:44
+machine asked for: 8 cpu, 32768 MiB; time budget of the job: 1800s
+memory figures are in units of 2^30 bytes
+--- the sources: archive sha256 bf393285e8622e9d1c85c103004d199022ea67be95c115e4617884fc294d8fb0; files 121; sha256 of the list of per-file digests e5856c618fde2356c6d934cd2e021511be77532bc513c9480c0a351735dbc63e
+.lean files of the library tree: 86 = 84 of the library + 2 comparator modules
+--- machine and versions
+    | Linux 4.19.0-gvisor x86_64
+    | cores: 8
+    | user id: 0
+    | Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+    | Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)
+    | elan 4.2.4 (227caca13 2026-08-25)
+    | Python 3.11.12
+    | GNU Make 4.3
+    | security modules of the kernel: cat: /sys/kernel/security/lsm: No such file or directory
+--- tools
+comparator/PINS.env of the archive equals the revisions with which the tools were built: True
+nanoda: HEAD 68d5ca9db226849b41a6fff59d796ff19d0a8840 (equals NANODA_REV: True)
+lean4export: HEAD 15f6055e299ad5b89345e533cc2192f4cc00f659 (equals LEAN4EXPORT_REV: True); lean-toolchain: leanprover/lean4:v4.33.0
+comparator: HEAD 71b52ec29e06d4b7d882726553b1ceb99a2499e0 (equals COMPARATOR_REV: True); lean-toolchain: leanprover/lean4:v4.30.0-rc2
+    |       path    github.com/zouuup/landrun/cmd/landrun
+    |       mod     github.com/zouuup/landrun       v0.1.16-0.20251001204025-5ed4a3db3a4a   h1:TR9nUCFAwPUh66cEx+grXTJ9Dz7zeny9QkWZ/g9p/5E=
+    | cargo 1.99.0 (5f94df478 2026-08-27)
+    | go version go1.25.12 linux/amd64
+    | on PATH: landrun
+    | on PATH: lean4export
+    | on PATH: nanoda_bin
+    | on PATH: comparator
+landrun: the module version names the revision 5ed4a3db3a4a: True
+all tool revisions as pinned: True
+--- does the real landrun confine a process here? (scripts/check_sandbox.sh)
+scripts/check_sandbox.sh: exit=1 in 0s
+    | check_sandbox.sh: a write to a directory declared writable succeeded (as it must)
+    | check_sandbox.sh: a write outside the declared directories SUCCEEDED: there is no sandbox here
+    | check_sandbox.sh: the sandbox does NOT hold; a comparator run on this machine is no certificate
+landrun without --best-effort (it must fail on a kernel without Landlock):
+    | [landrun:error] 2026/10/22 01:31:47 Failed to apply sandbox: failed to apply Landlock filesystem restrictions: missing kernel Landlock support. Got Landlock ABI v0, wanted {Landlock V5; FS: all; Net:  [...]
+--- scripts/run_comparator_controls.sh --unsandboxed, started (UTC) 2026-10-22 01:31:47
+scripts/run_comparator_controls.sh --unsandboxed: exit=0 in 29s
+    | comparator control: accept: accepted (exit status 0), as it must be
+    |     | Your solution is okay!
+    | comparator control: reject-other-statement: rejected (exit status 1), as it must be
+    |     | uncaught exception: Challenge and solution theorem statement do not match: 'Ctl.goodTop'
+    | comparator control: reject-axiom: rejected (exit status 1), as it must be
+    |     | uncaught exception: Illegal axiom detected: 'Ctl.extra'
+    | comparator control: reject-false-proof: rejected (exit status 1), as it must be
+    |     | Running nanoda kernel on solution
+    |     | uncaught exception: Child exited with 101
+    | comparator control: reject-false-proof-lean-kernel: rejected (exit status 1), as it must be
+    |     | uncaught exception: (kernel) declaration type mismatch, 'Ctl.bad' has type
+    |     |   True
+    |     | but it is expected to have type
+    |     |   False
+    | comparator controls: all five runs ended as they must
+--- observation: the configuration `accept` with the REAL landrun on this kernel (user root, no systemd-run)
+lake env comparator comparator/accept.json, with the real landrun on PATH: exit=0 in 3s; the line 'Your solution is okay!' is present: True
+    | Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, Ctl.goodTop, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div [...]
+    | Running nanoda kernel on solution
+    | Nanoda kernel accepts the solution
+    | Running Lean default kernel on solution.
+    | Lean default kernel accepts the solution
+    | Your solution is okay!
+=== SUMMARY of job G
+tools at the revisions of comparator/PINS.env: True
+scripts/check_sandbox.sh with the real landrun: exit=1 (0 = the sandbox holds; 1 = no sandbox on this machine)
+the five controls, unsandboxed: exit=0 in 29s; comparator controls: all five runs ended as they must; sandbox on this machine: NO
+observation: comparator with the real landrun on this kernel, configuration accept: exit=0; 'Your solution is okay!': True; scripts/check_sandbox.sh: exit=1
+wall time of the job: 35s
+=== job G finished (UTC) 2026-10-22 01:32:19
+
+==============================================================================
+Machines H: hosted by GitHub; the two workflow runs on commit 4cdf5250f41d01a288a1f1c4df084abb899e1abf
+==============================================================================
+The times of the runs, jobs and steps are those that GitHub reports (UTC). Lines that begin
+with '    |' are lines of the logs of the jobs.
+
+=== workflow run 39706215016 (Build Lean formalization), started by hand, 2026-10-22T01:31:53Z to 2026-10-22T01:45:33Z, conclusion success
+--- job build: 01:31:56 to 01:45:32, conclusion success; image ubuntu-24.04 (20261018.339.1)
+step  2: Check out the repository: success, 01:31:58 to 01:31:58
+step  3: Install elan: success, 01:31:58 to 01:31:59
+step  4: Show the Lean version: success, 01:31:59 to 01:32:17
+step  5: Check the project-local imports: success, 01:32:17 to 01:32:17
+step  6: Static audit of the sources: success, 01:32:17 to 01:32:18
+step  7: Fetch the Mathlib build cache: success, 01:32:18 to 01:34:26
+step  8: Build: success, 01:34:26 to 01:40:37
+step  9: Axiom report: success, 01:40:37 to 01:40:44
+step 10: Replay the project through the kernel: success, 01:40:44 to 01:45:29
+step 11: Upload the reports: success, 01:45:29 to 01:45:30
+    | import check: 84 modules, 2 comparator modules, 0 errors
+    | static audit: 86 files, 0 findings, 0 files that could not be read
+    | static audit: permitted open proofs: 4 in AaronsonAmbainis/Comparator/Challenge.lean
+    | Build completed successfully (8790 jobs).
+    | axiom check: 119 declarations reported, 0 errors; allowed axioms: Classical.choice, Quot.sound, propext
+    | Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+    | lines 'replaying <module>' in the replay step: 84
+
+=== workflow run 39706217600 (Comparator), started by hand, 2026-10-22T01:31:54Z to 2026-10-22T01:52:04Z, conclusion success
+--- job controls: 01:31:57 to 01:37:43, conclusion success; image ubuntu-24.04 (20261018.339.1)
+step  2: Check out: success, 01:31:59 to 01:32:00
+step  3: Machine: success, 01:32:00 to 01:32:00
+step  4: Free disk space: success, 01:32:00 to 01:34:56
+step  5: Install elan: success, 01:34:56 to 01:34:56
+step  6: Lean version: success, 01:34:56 to 01:35:14
+step  7: Set up Go: success, 01:35:14 to 01:35:24
+step  8: Build landrun at the pinned revision: success, 01:35:24 to 01:35:42
+step  9: Build lean4export at the pinned revision, with the toolchain of this project: success, 01:35:42 to 01:35:51
+step 10: Build comparator at the pinned revision: success, 01:35:51 to 01:36:23
+step 11: Build nanoda at the pinned revision: success, 01:36:23 to 01:37:15
+step 12: Tools: success, 01:37:15 to 01:37:15
+step 13: Does the sandbox confine a process on this machine?: success, 01:37:15 to 01:37:15
+step 14: Controls: success, 01:37:15 to 01:37:39
+step 15: Fetch the Mathlib cache: skipped, 01:37:39 to 01:37:39
+step 16: Comparator on the four final theorems: skipped, 01:37:39 to 01:37:39
+step 17: Verdict: skipped, 01:37:39 to 01:37:39
+step 18: Upload the output: success, 01:37:39 to 01:37:40
+    | cores 2; memory 7 GB; user id 1001
+    | Linux 7.0.0-1017-azure x86_64
+    | lockdown,capability,landlock,yama,apparmor,ima,evm
+    | systemd 255 (255.4-1ubuntu8.18)
+    | lean4export 15f6055e299ad5b89345e533cc2192f4cc00f659
+    | comparator 71b52ec29e06d4b7d882726553b1ceb99a2499e0
+    | nanoda_lib 68d5ca9db226849b41a6fff59d796ff19d0a8840
+    | mod github.com/zouuup/landrun v0.1.16-0.20251001204025-5ed4a3db3a4a
+    | leanprover/lean4:v4.30.0-rc2
+    | check_sandbox.sh: a write to a directory declared writable succeeded (as it must)
+    | check_sandbox.sh: a write outside the declared directories was refused (as it must)
+    | check_sandbox.sh: the sandbox holds
+    | comparator control: accept: accepted (exit status 0), as it must be
+    | comparator control: reject-other-statement: rejected (exit status 1), as it must be
+    | comparator control: reject-axiom: rejected (exit status 1), as it must be
+    | comparator control: reject-false-proof: rejected (exit status 1), as it must be
+    | comparator control: reject-false-proof-lean-kernel: rejected (exit status 1), as it must be
+    | comparator controls: all five runs ended as they must
+--- job theorems: 01:31:57 to 01:52:03, conclusion success; image ubuntu-24.04 (20261018.339.1)
+step  2: Check out: success, 01:32:03 to 01:32:04
+step  3: Machine: success, 01:32:04 to 01:32:04
+step  4: Free disk space: success, 01:32:04 to 01:33:36
+step  5: Install elan: success, 01:33:36 to 01:33:37
+step  6: Lean version: success, 01:33:37 to 01:34:08
+step  7: Set up Go: success, 01:34:08 to 01:34:30
+step  8: Build landrun at the pinned revision: success, 01:34:30 to 01:34:43
+step  9: Build lean4export at the pinned revision, with the toolchain of this project: success, 01:34:43 to 01:34:50
+step 10: Build comparator at the pinned revision: success, 01:34:50 to 01:35:35
+step 11: Build nanoda at the pinned revision: success, 01:35:35 to 01:36:05
+step 12: Tools: success, 01:36:05 to 01:36:05
+step 13: Does the sandbox confine a process on this machine?: success, 01:36:05 to 01:36:05
+step 14: Controls: skipped, 01:36:05 to 01:36:05
+step 15: Fetch the Mathlib cache: success, 01:36:05 to 01:39:17
+step 16: Comparator on the four final theorems: success, 01:39:17 to 01:51:53
+step 17: Verdict: success, 01:51:54 to 01:51:54
+step 18: Upload the output: success, 01:51:54 to 01:51:56
+    | cores 2; memory 7 GB; user id 1001
+    | Linux 7.0.0-1017-azure x86_64
+    | lockdown,capability,landlock,yama,apparmor,ima,evm
+    | systemd 255 (255.4-1ubuntu8.18)
+    | lean4export 15f6055e299ad5b89345e533cc2192f4cc00f659
+    | comparator 71b52ec29e06d4b7d882726553b1ceb99a2499e0
+    | nanoda_lib 68d5ca9db226849b41a6fff59d796ff19d0a8840
+    | mod github.com/zouuup/landrun v0.1.16-0.20251001204025-5ed4a3db3a4a
+    | leanprover/lean4:v4.30.0-rc2
+    | check_sandbox.sh: a write to a directory declared writable succeeded (as it must)
+    | check_sandbox.sh: a write outside the declared directories was refused (as it must)
+    | check_sandbox.sh: the sandbox holds
+    | Build completed successfully (6 jobs).
+    | Build completed successfully (20 jobs).
+    | Build completed successfully (8707 jobs).
+    | Build completed successfully (8780 jobs).
+    | Running nanoda kernel on solution
+    | Nanoda kernel accepts the solution
+    | Running Lean default kernel on solution.
+    | Lean default kernel accepts the solution
+    | Your solution is okay!
+    | Finished with result: success
+    | Main processes terminated with: code=exited/status=0
+    | Service runtime: 12min 36.699s
+    | CPU time consumed: 10min 51.142s

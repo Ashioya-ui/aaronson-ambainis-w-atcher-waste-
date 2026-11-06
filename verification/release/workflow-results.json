@@ -1,0 +1,583 @@
+{
+  "checked_commit": "88bf443cbab819f89680bd617f0538e114eba9e4",
+  "source_digest": "593eda9c5d897c139e9b797820498b001a6151d2e1d6e19371f6d2bb5b5261bd",
+  "source_digest_file_count": 87,
+  "archive_files_manifest": "verification/archive-files.txt",
+  "archive_files_manifest_sha256": "e5856c618fde2356c6d934cd2e021511be77532bc513c9480c0a351735dbc63e",
+  "archive_files_matching_count": 121,
+  "workflow_runs": [
+    {
+      "run_id": 42150538176,
+      "name": "Build Lean formalization",
+      "headSha": "88bf443cbab819f89680bd617f0538e114eba9e4",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-11-06T02:28:27Z",
+      "updatedAt": "2026-11-06T02:41:53Z",
+      "jobs": [
+        {
+          "name": "build",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-11-06T02:28:29Z",
+          "completedAt": "2026-11-06T02:41:52Z",
+          "steps": [
+            {
+              "completedAt": "2026-11-06T02:28:31Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-06T02:28:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:32Z",
+              "conclusion": "success",
+              "name": "Check out the repository",
+              "number": 2,
+              "startedAt": "2026-11-06T02:28:31Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:32Z",
+              "conclusion": "success",
+              "name": "Install elan",
+              "number": 3,
+              "startedAt": "2026-11-06T02:28:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:50Z",
+              "conclusion": "success",
+              "name": "Show the Lean version",
+              "number": 4,
+              "startedAt": "2026-11-06T02:28:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:50Z",
+              "conclusion": "success",
+              "name": "Check the project-local imports",
+              "number": 5,
+              "startedAt": "2026-11-06T02:28:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:51Z",
+              "conclusion": "success",
+              "name": "Static audit of the sources",
+              "number": 6,
+              "startedAt": "2026-11-06T02:28:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:30:54Z",
+              "conclusion": "success",
+              "name": "Fetch the Mathlib build cache",
+              "number": 7,
+              "startedAt": "2026-11-06T02:28:51Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:36:54Z",
+              "conclusion": "success",
+              "name": "Build",
+              "number": 8,
+              "startedAt": "2026-11-06T02:30:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:37:01Z",
+              "conclusion": "success",
+              "name": "Axiom report",
+              "number": 9,
+              "startedAt": "2026-11-06T02:36:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:41:49Z",
+              "conclusion": "success",
+              "name": "Replay the project through the kernel",
+              "number": 10,
+              "startedAt": "2026-11-06T02:37:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:41:50Z",
+              "conclusion": "success",
+              "name": "Upload the reports",
+              "number": 11,
+              "startedAt": "2026-11-06T02:41:49Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:41:51Z",
+              "conclusion": "success",
+              "name": "Post Check out the repository",
+              "number": 22,
+              "startedAt": "2026-11-06T02:41:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:41:51Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 23,
+              "startedAt": "2026-11-06T02:41:51Z",
+              "status": "completed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 42150538313,
+      "name": "Comparator",
+      "headSha": "88bf443cbab819f89680bd617f0538e114eba9e4",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-11-06T02:28:27Z",
+      "updatedAt": "2026-11-06T02:43:47Z",
+      "jobs": [
+        {
+          "name": "theorems",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-11-06T02:28:29Z",
+          "completedAt": "2026-11-06T02:43:46Z",
+          "steps": [
+            {
+              "completedAt": "2026-11-06T02:28:32Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-06T02:28:31Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:33Z",
+              "conclusion": "success",
+              "name": "Check out",
+              "number": 2,
+              "startedAt": "2026-11-06T02:28:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:33Z",
+              "conclusion": "success",
+              "name": "Machine",
+              "number": 3,
+              "startedAt": "2026-11-06T02:28:33Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:29:26Z",
+              "conclusion": "success",
+              "name": "Free disk space",
+              "number": 4,
+              "startedAt": "2026-11-06T02:28:33Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:29:26Z",
+              "conclusion": "success",
+              "name": "Install elan",
+              "number": 5,
+              "startedAt": "2026-11-06T02:29:26Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:29:48Z",
+              "conclusion": "success",
+              "name": "Lean version",
+              "number": 6,
+              "startedAt": "2026-11-06T02:29:26Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:30:00Z",
+              "conclusion": "success",
+              "name": "Set up Go",
+              "number": 7,
+              "startedAt": "2026-11-06T02:29:48Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:30:17Z",
+              "conclusion": "success",
+              "name": "Build landrun at the pinned revision",
+              "number": 8,
+              "startedAt": "2026-11-06T02:30:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:30:25Z",
+              "conclusion": "success",
+              "name": "Build lean4export at the pinned revision, with the toolchain of this project",
+              "number": 9,
+              "startedAt": "2026-11-06T02:30:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:30:57Z",
+              "conclusion": "success",
+              "name": "Build comparator at the pinned revision",
+              "number": 10,
+              "startedAt": "2026-11-06T02:30:25Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:50Z",
+              "conclusion": "success",
+              "name": "Build nanoda at the pinned revision",
+              "number": 11,
+              "startedAt": "2026-11-06T02:30:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:50Z",
+              "conclusion": "success",
+              "name": "Tools",
+              "number": 12,
+              "startedAt": "2026-11-06T02:31:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:50Z",
+              "conclusion": "success",
+              "name": "Does the sandbox confine a process on this machine?",
+              "number": 13,
+              "startedAt": "2026-11-06T02:31:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:50Z",
+              "conclusion": "skipped",
+              "name": "Controls",
+              "number": 14,
+              "startedAt": "2026-11-06T02:31:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:34:10Z",
+              "conclusion": "success",
+              "name": "Fetch the Mathlib cache",
+              "number": 15,
+              "startedAt": "2026-11-06T02:31:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:43:39Z",
+              "conclusion": "success",
+              "name": "Comparator on the four final theorems",
+              "number": 16,
+              "startedAt": "2026-11-06T02:34:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:43:40Z",
+              "conclusion": "success",
+              "name": "Verdict",
+              "number": 17,
+              "startedAt": "2026-11-06T02:43:39Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:43:42Z",
+              "conclusion": "success",
+              "name": "Upload the output",
+              "number": 18,
+              "startedAt": "2026-11-06T02:43:40Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:43:42Z",
+              "conclusion": "success",
+              "name": "Post Set up Go",
+              "number": 35,
+              "startedAt": "2026-11-06T02:43:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:43:42Z",
+              "conclusion": "success",
+              "name": "Post Check out",
+              "number": 36,
+              "startedAt": "2026-11-06T02:43:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:43:42Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 37,
+              "startedAt": "2026-11-06T02:43:42Z",
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "name": "controls",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-11-06T02:28:39Z",
+          "completedAt": "2026-11-06T02:31:52Z",
+          "steps": [
+            {
+              "completedAt": "2026-11-06T02:28:41Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-06T02:28:40Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:42Z",
+              "conclusion": "success",
+              "name": "Check out",
+              "number": 2,
+              "startedAt": "2026-11-06T02:28:41Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:42Z",
+              "conclusion": "success",
+              "name": "Machine",
+              "number": 3,
+              "startedAt": "2026-11-06T02:28:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:29:33Z",
+              "conclusion": "success",
+              "name": "Free disk space",
+              "number": 4,
+              "startedAt": "2026-11-06T02:28:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:29:34Z",
+              "conclusion": "success",
+              "name": "Install elan",
+              "number": 5,
+              "startedAt": "2026-11-06T02:29:33Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:29:51Z",
+              "conclusion": "success",
+              "name": "Lean version",
+              "number": 6,
+              "startedAt": "2026-11-06T02:29:34Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:30:02Z",
+              "conclusion": "success",
+              "name": "Set up Go",
+              "number": 7,
+              "startedAt": "2026-11-06T02:29:51Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:30:18Z",
+              "conclusion": "success",
+              "name": "Build landrun at the pinned revision",
+              "number": 8,
+              "startedAt": "2026-11-06T02:30:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:30:25Z",
+              "conclusion": "success",
+              "name": "Build lean4export at the pinned revision, with the toolchain of this project",
+              "number": 9,
+              "startedAt": "2026-11-06T02:30:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:30:56Z",
+              "conclusion": "success",
+              "name": "Build comparator at the pinned revision",
+              "number": 10,
+              "startedAt": "2026-11-06T02:30:25Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:27Z",
+              "conclusion": "success",
+              "name": "Build nanoda at the pinned revision",
+              "number": 11,
+              "startedAt": "2026-11-06T02:30:56Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:27Z",
+              "conclusion": "success",
+              "name": "Tools",
+              "number": 12,
+              "startedAt": "2026-11-06T02:31:27Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:27Z",
+              "conclusion": "success",
+              "name": "Does the sandbox confine a process on this machine?",
+              "number": 13,
+              "startedAt": "2026-11-06T02:31:27Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:48Z",
+              "conclusion": "success",
+              "name": "Controls",
+              "number": 14,
+              "startedAt": "2026-11-06T02:31:27Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:48Z",
+              "conclusion": "skipped",
+              "name": "Fetch the Mathlib cache",
+              "number": 15,
+              "startedAt": "2026-11-06T02:31:48Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:48Z",
+              "conclusion": "skipped",
+              "name": "Comparator on the four final theorems",
+              "number": 16,
+              "startedAt": "2026-11-06T02:31:48Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:48Z",
+              "conclusion": "skipped",
+              "name": "Verdict",
+              "number": 17,
+              "startedAt": "2026-11-06T02:31:48Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:49Z",
+              "conclusion": "success",
+              "name": "Upload the output",
+              "number": 18,
+              "startedAt": "2026-11-06T02:31:48Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:49Z",
+              "conclusion": "success",
+              "name": "Post Set up Go",
+              "number": 35,
+              "startedAt": "2026-11-06T02:31:49Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:49Z",
+              "conclusion": "success",
+              "name": "Post Check out",
+              "number": 36,
+              "startedAt": "2026-11-06T02:31:49Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:31:49Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 37,
+              "startedAt": "2026-11-06T02:31:49Z",
+              "status": "completed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 42150538274,
+      "name": "Release files",
+      "headSha": "88bf443cbab819f89680bd617f0538e114eba9e4",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-11-06T02:28:27Z",
+      "updatedAt": "2026-11-06T02:28:58Z",
+      "jobs": [
+        {
+          "name": "release-files",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-11-06T02:28:29Z",
+          "completedAt": "2026-11-06T02:28:57Z",
+          "steps": [
+            {
+              "completedAt": "2026-11-06T02:28:30Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-11-06T02:28:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:32Z",
+              "conclusion": "success",
+              "name": "Check out",
+              "number": 2,
+              "startedAt": "2026-11-06T02:28:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:54Z",
+              "conclusion": "success",
+              "name": "Install citation and PDF tools",
+              "number": 3,
+              "startedAt": "2026-11-06T02:28:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:55Z",
+              "conclusion": "success",
+              "name": "Validate citation and generate BibTeX",
+              "number": 4,
+              "startedAt": "2026-11-06T02:28:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:55Z",
+              "conclusion": "success",
+              "name": "Check publication files",
+              "number": 5,
+              "startedAt": "2026-11-06T02:28:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:56Z",
+              "conclusion": "success",
+              "name": "Save citation",
+              "number": 6,
+              "startedAt": "2026-11-06T02:28:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:56Z",
+              "conclusion": "success",
+              "name": "Post Check out",
+              "number": 12,
+              "startedAt": "2026-11-06T02:28:56Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-11-06T02:28:56Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 13,
+              "startedAt": "2026-11-06T02:28:56Z",
+              "status": "completed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

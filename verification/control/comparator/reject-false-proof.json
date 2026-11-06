@@ -1,0 +1,13 @@
+{
+  "challenge_module": "Ctl.Challenge.Bad",
+  "solution_module": "Ctl.Bad.Top",
+  "theorem_names": [
+    "Ctl.top"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

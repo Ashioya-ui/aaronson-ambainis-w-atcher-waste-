@@ -1,0 +1,153 @@
+name: Comparator
+
+# A sandboxed run of comparator (https://github.com/leanprover/comparator) on the four final
+# theorems, and the controls of that run. See comparator/README.md.
+#
+# The two runs of the matrix are separate machines, so that the controls, one of which builds
+# a deliberately false declaration, are never compiled on the machine that judges the theorems.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'AaronsonAmbainis/**'
+      - 'AaronsonAmbainis.lean'
+      - 'comparator/config.json'
+      - 'comparator/PINS.env'
+      - 'scripts/**'
+      - 'verification/control/**'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - 'lean-toolchain'
+      - 'Makefile'
+      - '.github/workflows/comparator.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A run in progress is never cancelled by a later push; the later run waits for it.
+concurrency:
+  group: comparator-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  comparator:
+    name: ${{ matrix.run }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [controls, theorems]
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Machine
+        run: |
+          uname -srm
+          nproc
+          free -g
+          id -u
+          cat /sys/kernel/security/lsm; echo
+          systemd-run --version | head -n 1
+          df -h /
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          df -h /
+
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Lean version
+        run: lean --version
+
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.25.12'
+          cache: false
+
+      - name: Build landrun at the pinned revision
+        run: |
+          set -euo pipefail
+          . comparator/PINS.env
+          go install "github.com/zouuup/landrun/cmd/landrun@${LANDRUN_REV}"
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
+      - name: Build lean4export at the pinned revision, with the toolchain of this project
+        run: |
+          set -euo pipefail
+          . comparator/PINS.env
+          git clone https://github.com/leanprover/lean4export.git "$RUNNER_TEMP/lean4export"
+          git -C "$RUNNER_TEMP/lean4export" checkout "$LEAN4EXPORT_REV"
+          cp lean-toolchain "$RUNNER_TEMP/lean4export/lean-toolchain"
+          (cd "$RUNNER_TEMP/lean4export" && lake build lean4export)
+          echo "$RUNNER_TEMP/lean4export/.lake/build/bin" >> "$GITHUB_PATH"
+
+      - name: Build comparator at the pinned revision
+        run: |
+          set -euo pipefail
+          . comparator/PINS.env
+          git clone https://github.com/leanprover/comparator.git "$RUNNER_TEMP/comparator"
+          git -C "$RUNNER_TEMP/comparator" checkout "$COMPARATOR_REV"
+          (cd "$RUNNER_TEMP/comparator" && lake build comparator)
+          echo "$RUNNER_TEMP/comparator/.lake/build/bin" >> "$GITHUB_PATH"
+
+      - name: Build nanoda at the pinned revision
+        run: |
+          set -euo pipefail
+          . comparator/PINS.env
+          git clone https://github.com/robsimmons/nanoda_lib.git "$RUNNER_TEMP/nanoda_lib"
+          git -C "$RUNNER_TEMP/nanoda_lib" checkout "$NANODA_REV"
+          (cd "$RUNNER_TEMP/nanoda_lib" && cargo build --release --locked)
+          echo "$RUNNER_TEMP/nanoda_lib/target/release" >> "$GITHUB_PATH"
+
+      - name: Tools
+        run: |
+          set -euo pipefail
+          for d in lean4export comparator nanoda_lib; do
+            printf '%s %s\n' "$d" "$(git -C "$RUNNER_TEMP/$d" rev-parse HEAD)"
+          done
+          go version -m "$(command -v landrun)" | head -n 4
+          cat "$RUNNER_TEMP/comparator/lean-toolchain"
+
+      - name: Does the sandbox confine a process on this machine?
+        run: ./scripts/check_sandbox.sh
+
+      - name: Controls
+        if: matrix.run == 'controls'
+        run: |
+          set -o pipefail
+          make comparator-controls 2>&1 | tee comparator-controls.txt
+
+      - name: Fetch the Mathlib cache
+        if: matrix.run == 'theorems'
+        run: lake exe cache get
+
+      - name: Comparator on the four final theorems
+        if: matrix.run == 'theorems'
+        run: |
+          set -o pipefail
+          make comparator 2>&1 | tee comparator-output.txt
+
+      - name: Verdict
+        if: matrix.run == 'theorems'
+        run: tr -d '\r' < comparator-output.txt | grep -x 'Your solution is okay!'
+
+      - name: Upload the output
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: comparator-${{ matrix.run }}
+          path: |
+            comparator-controls.txt
+            comparator-output.txt
+          if-no-files-found: warn

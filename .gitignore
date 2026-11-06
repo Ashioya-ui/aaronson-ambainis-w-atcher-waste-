@@ -1,0 +1,33 @@
+# Lean / Lake
+.lake/
+.lean/
+*.olean
+*.ilean
+*.c
+*.o
+
+# Reports produced by the checks (the recorded copies are in verification/)
+/axiom-report.txt
+/build.log
+/comparator-output.txt
+/comparator-controls.txt
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Python
+__pycache__/
+
+# Editors and operating systems
+.DS_Store
+.vscode/
+.idea/
+*~

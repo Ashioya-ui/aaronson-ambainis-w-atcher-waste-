@@ -1,0 +1,16 @@
+{
+  "challenge_module": "AaronsonAmbainis.Comparator.Challenge",
+  "solution_module": "AaronsonAmbainis.Comparator.Solution",
+  "theorem_names": [
+    "AaronsonAmbainisComparator.aaronson_ambainis",
+    "AaronsonAmbainisComparator.aaronson_ambainis_explicit",
+    "AaronsonAmbainisComparator.aaronson_ambainis_pm",
+    "AaronsonAmbainisComparator.aaronson_ambainis_of_fbsDegreeBound"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

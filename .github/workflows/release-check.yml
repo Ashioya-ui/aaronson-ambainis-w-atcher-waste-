@@ -1,0 +1,43 @@
+name: Release files
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-files:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install citation and PDF tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends poppler-utils
+          python3 -m venv "$RUNNER_TEMP/cff"
+          "$RUNNER_TEMP/cff/bin/pip" install cffconvert==2.0.0
+
+      - name: Validate citation and generate BibTeX
+        run: |
+          "$RUNNER_TEMP/cff/bin/cffconvert" --validate
+          "$RUNNER_TEMP/cff/bin/cffconvert" --format bibtex --outfile "$RUNNER_TEMP/citation.bib"
+          cat "$RUNNER_TEMP/citation.bib"
+
+      - name: Check publication files
+        run: python3 scripts/check_release.py
+
+      - name: Save citation
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: citation
+          path: ${{ runner.temp }}/citation.bib

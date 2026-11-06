@@ -1,0 +1,9 @@
+modules with prefix AaronsonAmbainis: 84
+constants in these modules: 761; unsafe or partial (skipped by a replay): 0
+definitions 113; theorems 648; axioms 0; opaque 0; quot 0
+inductive types 0 in 0 blocks; constructors 0; recursors 0
+declarations a replay adds (definitions + theorems + axioms + opaque + quot + inductive blocks): 761
+final theorem: AaronsonAmbainis.aaronson_ambainis (theorem, in AaronsonAmbainis.Main)
+final theorem: AaronsonAmbainis.aaronson_ambainis_pm (theorem, in AaronsonAmbainis.Main)
+final theorem: AaronsonAmbainis.aaronson_ambainis_explicit (theorem, in AaronsonAmbainis.Main)
+final theorem: AaronsonAmbainis.aaronson_ambainis_of_fbsDegreeBound (theorem, in AaronsonAmbainis.Main)

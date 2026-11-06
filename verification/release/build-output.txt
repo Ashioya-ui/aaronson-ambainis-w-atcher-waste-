@@ -1,0 +1,293 @@
+✔ [8706/8790] Built AaronsonAmbainis.Level.Integral (46s)
+✔ [8707/8790] Built AaronsonAmbainis.Level.Median (46s)
+✔ [8708/8790] Built AaronsonAmbainis.Defs (10s)
+✔ [8709/8790] Built AaronsonAmbainis.TwoSided.CauchySchwarz (11s)
+✔ [8710/8790] Built AaronsonAmbainis.Conjecture (7.9s)
+✔ [8711/8790] Built AaronsonAmbainis.Statements (6.9s)
+✔ [8712/8790] Built AaronsonAmbainis.AllPairsDefs (7.8s)
+✔ [8713/8790] Built AaronsonAmbainis.RowDefs (7.8s)
+✔ [8714/8790] Built AaronsonAmbainis.DetDefs (6.9s)
+✔ [8715/8790] Built AaronsonAmbainis.Bridge.Basic (9.3s)
+✔ [8716/8790] Built AaronsonAmbainis.TwoSided.Basic (6.9s)
+✔ [8717/8790] Built AaronsonAmbainis.Dual.Core (6.7s)
+✔ [8718/8790] Built AaronsonAmbainis.Dual.Functional (6.3s)
+✔ [8719/8790] Built AaronsonAmbainis.Dual.Sets (6.5s)
+✔ [8720/8790] Built AaronsonAmbainis.Pack.Blocks (5.9s)
+✔ [8721/8790] Built AaronsonAmbainis.Pack.Gate (7.4s)
+✔ [8722/8790] Built AaronsonAmbainis.Row.DisjointBlocks (6.6s)
+✔ [8723/8790] Built AaronsonAmbainis.Row.Chi (6.0s)
+✔ [8724/8790] Built AaronsonAmbainis.Row.Markov (6.5s)
+✔ [8725/8790] Built AaronsonAmbainis.DetBij.Basic (6.5s)
+✔ [8726/8790] Built AaronsonAmbainis.DetLow.Basic (6.1s)
+✔ [8727/8790] Built AaronsonAmbainis.DetLow.Unit (6.2s)
+✔ [8728/8790] Built AaronsonAmbainis.Bridge.ZeroOne (6.4s)
+✔ [8729/8790] Built AaronsonAmbainis.Bridge.Transport (6.1s)
+✔ [8730/8790] Built AaronsonAmbainis.Bridge.Fourier (7.0s)
+✔ [8731/8790] Built AaronsonAmbainis.Dual.RowAux (6.1s)
+✔ [8732/8790] Built AaronsonAmbainis.Average.Coordinate (7.6s)
+✔ [8733/8790] Built AaronsonAmbainis.Level.Rows (6.8s)
+✔ [8734/8790] Built AaronsonAmbainis.Level.Basic (7.6s)
+✔ [8735/8790] Built AaronsonAmbainis.TwoSided.Overlap (7.8s)
+✔ [8736/8790] Built AaronsonAmbainis.TwoSided.Glue (6.8s)
+✔ [8737/8790] Built AaronsonAmbainis.TwoSided.Antipodal (7.1s)
+✔ [8738/8790] Built AaronsonAmbainis.Dual.Cover (6.6s)
+✔ [8739/8790] Built AaronsonAmbainis.Pack.Scaled (6.7s)
+✔ [8740/8790] Built AaronsonAmbainis.Row.Degree (7.8s)
+✔ [8741/8790] Built AaronsonAmbainis.Row.Extension (6.0s)
+✔ [8742/8790] Built AaronsonAmbainis.DetBij.Identity (7.7s)
+✔ [8743/8790] Built AaronsonAmbainis.DetLow.Count (7.6s)
+✔ [8744/8790] Built AaronsonAmbainis.DetLow.Degree (6.3s)
+✔ [8745/8790] Built AaronsonAmbainis.DetLow.RowOps (7.9s)
+✔ [8746/8790] Built AaronsonAmbainis.DetLow.NonZero (7.1s)
+✔ [8747/8790] Built AaronsonAmbainis.Bridge.Algebra (6.5s)
+✔ [8748/8790] Built AaronsonAmbainis.Average.Iterate (6.1s)
+✔ [8749/8790] Built AaronsonAmbainis.Bridge.Affine (6.9s)
+✔ [8750/8790] Built AaronsonAmbainis.Level.AllPairs (7.5s)
+ℹ [8751/8790] Built AaronsonAmbainis.Bridge.Positivity (7.3s)
+info: AaronsonAmbainis/Bridge/Positivity.lean:231:0: 'AaronsonAmbainis.Bridge.isRow_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Positivity.lean:232:0: 'AaronsonAmbainis.Bridge.antipodal_inner_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Positivity.lean:233:0: 'AaronsonAmbainis.Bridge.allPairs_inner_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Positivity.lean:234:0: 'AaronsonAmbainis.Bridge.row_norm_ge_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Positivity.lean:235:0: 'AaronsonAmbainis.Bridge.antipodal_iff_onZone' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Positivity.lean:236:0: 'AaronsonAmbainis.Bridge.allPairs_iff_nonconstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8752/8790] Built AaronsonAmbainis.TwoSided.RemoveWeights (6.9s)
+✔ [8753/8790] Built AaronsonAmbainis.TwoSided.AllPairsCore (6.6s)
+✔ [8754/8790] Built AaronsonAmbainis.Dual.Row (5.8s)
+✔ [8755/8790] Built AaronsonAmbainis.Pack.Packing (7.2s)
+✔ [8756/8790] Built AaronsonAmbainis.Row.Gadget (7.2s)
+✔ [8757/8790] Built AaronsonAmbainis.Row.Sensitivity (7.0s)
+✔ [8758/8790] Built AaronsonAmbainis.DetBij.Perm (7.6s)
+✔ [8759/8790] Built AaronsonAmbainis.DetLow.Main (6.8s)
+✔ [8760/8790] Built AaronsonAmbainis.Bridge.Poly (6.9s)
+✔ [8761/8790] Built AaronsonAmbainis.Average.Influence (9.4s)
+✔ [8762/8790] Built AaronsonAmbainis.Level.Integrated (9.8s)
+✔ [8763/8790] Built AaronsonAmbainis.Level.ThirdMoment (10s)
+ℹ [8764/8790] Built AaronsonAmbainis.Bridge.PaperInequalities (8.6s)
+info: AaronsonAmbainis/Bridge/PaperInequalities.lean:229:0: 'AaronsonAmbainis.Bridge.twoSided_iff_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/PaperInequalities.lean:230:0: 'AaronsonAmbainis.Bridge.twoSidedMinCost_of_twoSided' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/PaperInequalities.lean:231:0: 'AaronsonAmbainis.Bridge.detInequality_iff_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/PaperInequalities.lean:232:0: 'AaronsonAmbainis.Bridge.packingBound_iff_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8765/8790] Built AaronsonAmbainis.Dual.Main (6.0s)
+✔ [8766/8790] Built AaronsonAmbainis.TwoSided.AllPairs (8.3s)
+✔ [8767/8790] Built AaronsonAmbainis.Pack.Main (5.9s)
+✔ [8768/8790] Built AaronsonAmbainis.Row.Block (6.7s)
+✔ [8769/8790] Built AaronsonAmbainis.DetBij.Bijection (6.0s)
+✔ [8770/8790] Built AaronsonAmbainis.DetBij.Main (6.6s)
+✔ [8771/8790] Built AaronsonAmbainis.DetLow.Corollary (5.0s)
+✔ [8772/8790] Built AaronsonAmbainis.Bridge.PrintedAA (9.0s)
+✔ [8773/8790] Built AaronsonAmbainis.Bridge.PrintedRow (9.2s)
+✔ [8774/8790] Built AaronsonAmbainis.MainTheorem (6.9s)
+✔ [8775/8790] Built AaronsonAmbainis.Average.Main (5.4s)
+✔ [8776/8790] Built AaronsonAmbainis.TwoSided.Main (7.4s)
+✔ [8777/8790] Built AaronsonAmbainis.Level.Increments (9.4s)
+✔ [8778/8790] Built AaronsonAmbainis.Row.Main (7.1s)
+✔ [8779/8790] Built AaronsonAmbainis.DetTheorem (6.6s)
+✔ [8780/8790] Built AaronsonAmbainis.Level.Main (6.7s)
+✔ [8781/8790] Built AaronsonAmbainis.Dual.Sanity (7.9s)
+ℹ [8782/8790] Built AaronsonAmbainis.Bridge.PaperTheorems (7.7s)
+info: AaronsonAmbainis/Bridge/PaperTheorems.lean:250:0: 'AaronsonAmbainis.Bridge.rowBoundPM_iff_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/PaperTheorems.lean:251:0: 'AaronsonAmbainis.Bridge.meanIncrement_iff_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/PaperTheorems.lean:252:0: 'AaronsonAmbainis.Bridge.influence_iff_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/PaperTheorems.lean:253:0: 'AaronsonAmbainis.Bridge.meanIncrementDegree_iff_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/PaperTheorems.lean:254:0: 'AaronsonAmbainis.Bridge.mainTheorem_iff_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8783/8790] Built AaronsonAmbainis.Row.HypothesisCheck (7.3s)
+✔ [8784/8790] Built AaronsonAmbainis.Chain (4.6s)
+ℹ [8785/8790] Built AaronsonAmbainis.Bridge.Capstone (4.3s)
+info: AaronsonAmbainis/Bridge/Capstone.lean:100:0: AaronsonAmbainis.mainTheorem : AaronsonAmbainis.MainTheorem
+info: AaronsonAmbainis/Bridge/Capstone.lean:101:0: AaronsonAmbainis.mainTheoremImproved_of_rowBound : AaronsonAmbainis.RowBound → AaronsonAmbainis.MainTheoremImproved
+info: AaronsonAmbainis/Bridge/Capstone.lean:103:0: AaronsonAmbainis.Bridge.explicitBound : AaronsonAmbainis.ExplicitBound
+info: AaronsonAmbainis/Bridge/Capstone.lean:104:0: AaronsonAmbainis.Bridge.explicitBoundImproved_of_fbsDegreeBound : AaronsonAmbainis.FbsDegreeBound →
+  AaronsonAmbainis.ExplicitBoundImproved
+info: AaronsonAmbainis/Bridge/Capstone.lean:106:0: 'AaronsonAmbainis.mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:107:0: 'AaronsonAmbainis.mainTheoremImproved_of_rowBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:108:0: 'AaronsonAmbainis.Bridge.explicitBound_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:109:0: 'AaronsonAmbainis.Bridge.explicitBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:110:0: 'AaronsonAmbainis.Bridge.printedConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:111:0: 'AaronsonAmbainis.Bridge.explicitBoundPM_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:112:0: 'AaronsonAmbainis.Bridge.explicitBoundPM' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:113:0: 'AaronsonAmbainis.Bridge.explicitBoundImproved_sq_of_fbsDegreeBound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:114:0: 'AaronsonAmbainis.Bridge.explicitBoundImproved_of_fbsDegreeBound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8786/8790] Built AaronsonAmbainis.Main (7.5s)
+info: AaronsonAmbainis/Main.lean:53:0: 'AaronsonAmbainis.aaronson_ambainis' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Main.lean:54:0: 'AaronsonAmbainis.aaronson_ambainis_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Main.lean:55:0: 'AaronsonAmbainis.aaronson_ambainis_pm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Main.lean:56:0: 'AaronsonAmbainis.aaronson_ambainis_of_fbsDegreeBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8787/8790] Built AaronsonAmbainis.Bridge.Instance (8.0s)
+info: AaronsonAmbainis/Bridge/Instance.lean:163:0: 'AaronsonAmbainis.Bridge.conj6_instance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Instance.lean:164:0: 'AaronsonAmbainis.Bridge.problemPM_instance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Instance.lean:165:0: 'AaronsonAmbainis.Bridge.conj6_instance_conclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8788/8790] Built AaronsonAmbainis.AxiomReport (4.8s)
+info: AaronsonAmbainis/AxiomReport.lean:39:0: aaronson_ambainis : PrintedConjecture
+info: AaronsonAmbainis/AxiomReport.lean:40:0: aaronson_ambainis_explicit : ExplicitBound
+info: AaronsonAmbainis/AxiomReport.lean:41:0: aaronson_ambainis_pm : ExplicitBoundPM
+info: AaronsonAmbainis/AxiomReport.lean:42:0: aaronson_ambainis_of_fbsDegreeBound : FbsDegreeBound → ExplicitBoundImproved
+info: AaronsonAmbainis/AxiomReport.lean:44:0: 'AaronsonAmbainis.aaronson_ambainis' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:45:0: 'AaronsonAmbainis.aaronson_ambainis_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:46:0: 'AaronsonAmbainis.aaronson_ambainis_pm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:47:0: 'AaronsonAmbainis.aaronson_ambainis_of_fbsDegreeBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:51:0: detInequality : DetInequality
+info: AaronsonAmbainis/AxiomReport.lean:52:0: antipodalInequality : AntipodalInequality
+info: AaronsonAmbainis/AxiomReport.lean:53:0: allPairsInequality : AllPairsInequality
+info: AaronsonAmbainis/AxiomReport.lean:54:0: twoSidedInequality : TwoSidedInequality
+info: AaronsonAmbainis/AxiomReport.lean:55:0: integratedAllPairsInequality : IntegratedAllPairsInequality
+info: AaronsonAmbainis/AxiomReport.lean:56:0: thirdMomentInequality : ThirdMomentInequality
+info: AaronsonAmbainis/AxiomReport.lean:57:0: meanIncrementBound : MeanIncrementBound
+info: AaronsonAmbainis/AxiomReport.lean:58:0: influenceBound : InfluenceBound
+info: AaronsonAmbainis/AxiomReport.lean:59:0: 'AaronsonAmbainis.detInequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:60:0: 'AaronsonAmbainis.antipodalInequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:61:0: 'AaronsonAmbainis.allPairsInequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:62:0: 'AaronsonAmbainis.twoSidedInequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:63:0: 'AaronsonAmbainis.integratedAllPairsInequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:64:0: 'AaronsonAmbainis.thirdMomentInequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:65:0: 'AaronsonAmbainis.meanIncrementBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:66:0: 'AaronsonAmbainis.influenceBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:67:0: markovEndpoint : MarkovEndpoint
+info: AaronsonAmbainis/AxiomReport.lean:68:0: blockInequality : BlockInequality
+info: AaronsonAmbainis/AxiomReport.lean:69:0: sensitivityBound : SensitivityBound
+info: AaronsonAmbainis/AxiomReport.lean:70:0: packingBound : PackingBound
+info: AaronsonAmbainis/AxiomReport.lean:71:0: coverDuality : CoverDuality
+info: AaronsonAmbainis/AxiomReport.lean:72:0: rowBoundPM : RowBoundPM
+info: AaronsonAmbainis/AxiomReport.lean:73:0: 'AaronsonAmbainis.markovEndpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:74:0: 'AaronsonAmbainis.blockInequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:75:0: 'AaronsonAmbainis.sensitivityBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:76:0: 'AaronsonAmbainis.packingBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:77:0: 'AaronsonAmbainis.coverDuality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:78:0: 'AaronsonAmbainis.rowBoundPM' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:79:0: mainTheorem : MainTheorem
+info: AaronsonAmbainis/AxiomReport.lean:80:0: meanIncrementDegreeBound : MeanIncrementDegreeBound
+info: AaronsonAmbainis/AxiomReport.lean:81:0: mainTheoremImproved_of_rowBound : RowBound → MainTheoremImproved
+info: AaronsonAmbainis/AxiomReport.lean:82:0: 'AaronsonAmbainis.mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:83:0: 'AaronsonAmbainis.meanIncrementDegreeBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:84:0: 'AaronsonAmbainis.mainTheoremImproved_of_rowBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:90:0: DetLow.lowestUnit : LowestUnit
+info: AaronsonAmbainis/AxiomReport.lean:91:0: DetLow.lowestBound : LowestBound
+info: AaronsonAmbainis/AxiomReport.lean:92:0: 'AaronsonAmbainis.DetLow.lowestUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:93:0: 'AaronsonAmbainis.DetLow.lowestBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:94:0: 'AaronsonAmbainis.DetLow.exists_lowest_le_bdry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:95:0: 'AaronsonAmbainis.DetLow.exists_monomial_weight_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:96:0: DetBij.detInequality_of_lowest : LowestUnit → LowestBound → DetInequality
+info: AaronsonAmbainis/AxiomReport.lean:99:0: 'AaronsonAmbainis.DetBij.detInequality_of_lowest' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:100:0: 'AaronsonAmbainis.DetBij.exists_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:101:0: 'AaronsonAmbainis.DetBij.Pmat_mul_agMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:102:0: 'AaronsonAmbainis.DetBij.wing_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:103:0: 'AaronsonAmbainis.DetBij.det_inequality_of_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:104:0: 'AaronsonAmbainis.DetBij.exists_bijection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:108:0: 'AaronsonAmbainis.antipodal_of_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:109:0: antipodal_of_det : DetInequality → AntipodalInequality
+info: AaronsonAmbainis/AxiomReport.lean:110:0: 'AaronsonAmbainis.allPairs_of_antipodal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:111:0: allPairs_of_antipodal : AntipodalInequality → AllPairsInequality
+info: AaronsonAmbainis/AxiomReport.lean:112:0: 'AaronsonAmbainis.twoSided_of_allPairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:113:0: twoSided_of_allPairs : AllPairsInequality → TwoSidedInequality
+info: AaronsonAmbainis/AxiomReport.lean:117:0: 'AaronsonAmbainis.integratedAllPairs_of_allPairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:118:0: integratedAllPairs_of_allPairs : AllPairsInequality → IntegratedAllPairsInequality
+info: AaronsonAmbainis/AxiomReport.lean:119:0: 'AaronsonAmbainis.thirdMoment_of_integratedAllPairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:120:0: thirdMoment_of_integratedAllPairs : IntegratedAllPairsInequality → ThirdMomentInequality
+info: AaronsonAmbainis/AxiomReport.lean:122:0: 'AaronsonAmbainis.meanIncrement_of_thirdMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:123:0: meanIncrement_of_thirdMoment : ThirdMomentInequality → MeanIncrementBound
+info: AaronsonAmbainis/AxiomReport.lean:124:0: 'AaronsonAmbainis.influence_of_meanIncrement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:125:0: influence_of_meanIncrement : MeanIncrementBound → InfluenceBound
+info: AaronsonAmbainis/AxiomReport.lean:129:0: 'AaronsonAmbainis.Level.isRow_levRow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:130:0: 'AaronsonAmbainis.Level.level_integration' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:131:0: 'AaronsonAmbainis.Level.pairSum_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:132:0: 'AaronsonAmbainis.Level.level_allPairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:133:0: 'AaronsonAmbainis.Level.integrated_four_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:134:0: 'AaronsonAmbainis.Level.thirdMoment_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:135:0: 'AaronsonAmbainis.Level.thirdMoment_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:136:0: 'AaronsonAmbainis.Level.separated_sets' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:137:0: 'AaronsonAmbainis.Level.exists_median' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:138:0: 'AaronsonAmbainis.Level.sum_sq_cube_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:139:0: 'AaronsonAmbainis.Level.variance_cube_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:140:0: 'AaronsonAmbainis.Level.exists_meanAbsIncr_ge_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:141:0: 'AaronsonAmbainis.Level.meanAbsIncr_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:142:0: 'AaronsonAmbainis.Level.cost_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:143:0: 'AaronsonAmbainis.Level.sum_meanAbsIncr_le_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:144:0: 'AaronsonAmbainis.Level.exists_rows_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:145:0: 'AaronsonAmbainis.Average.variance_avg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:146:0: 'AaronsonAmbainis.Average.rows_avg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:147:0: 'AaronsonAmbainis.Average.exists_avg_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:148:0: 'AaronsonAmbainis.Average.sum_meanAbsIncr_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:149:0: 'AaronsonAmbainis.Average.influence_of_incr' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:150:0: 'AaronsonAmbainis.Average.influence_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:151:0: 'AaronsonAmbainis.Average.exists_inflR_ge_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:155:0: blockInequality_of_markov : MarkovEndpoint → BlockInequality
+info: AaronsonAmbainis/AxiomReport.lean:156:0: 'AaronsonAmbainis.blockInequality_of_markov' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:157:0: sensitivity_of_block : BlockInequality → SensitivityBound
+info: AaronsonAmbainis/AxiomReport.lean:158:0: 'AaronsonAmbainis.sensitivity_of_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:159:0: 'AaronsonAmbainis.Row.disjoint_blocks_of_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:160:0: packingBound_of_block : BlockInequality → PackingBound
+info: AaronsonAmbainis/AxiomReport.lean:161:0: 'AaronsonAmbainis.packingBound_of_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:162:0: rowBoundPM_of_packing : PackingBound → RowBoundPM
+info: AaronsonAmbainis/AxiomReport.lean:163:0: 'AaronsonAmbainis.rowBoundPM_of_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:164:0: @Dual.exists_cover : ∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (t : Finset ι → ℝ) (K : ℝ),
+  (∀ (κ : Finset ι → ℝ), (∀ (S : Finset ι), 0 ≤ κ S) → (∀ (i : ι), ∑ S with i ∈ S, κ S ≤ 1) → ∑ S, κ S * t S ≤ K) →
+    ∃ a, (∀ (i : ι), 0 ≤ a i) ∧ ∑ i, a i ≤ K ∧ ∀ (S : Finset ι), t S ≤ ∑ i ∈ S, a i
+info: AaronsonAmbainis/AxiomReport.lean:165:0: @Dual.cover_iff_packing : ∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (t : Finset ι → ℝ) (K : ℝ),
+  (∀ (κ : Finset ι → ℝ), (∀ (S : Finset ι), 0 ≤ κ S) → (∀ (i : ι), ∑ S with i ∈ S, κ S ≤ 1) → ∑ S, κ S * t S ≤ K) ↔
+    ∃ a, (∀ (i : ι), 0 ≤ a i) ∧ ∑ i, a i ≤ K ∧ ∀ (S : Finset ι), t S ≤ ∑ i ∈ S, a i
+info: AaronsonAmbainis/AxiomReport.lean:166:0: Dual.packingBound_iff_rowBoundPM : PackingBound ↔ RowBoundPM
+info: AaronsonAmbainis/AxiomReport.lean:167:0: Dual.rowBoundPM_of_rowBound : RowBound → RowBoundPM
+info: AaronsonAmbainis/AxiomReport.lean:168:0: Dual.packingBound_of_rowBound : RowBound → PackingBound
+info: AaronsonAmbainis/AxiomReport.lean:169:0: 'AaronsonAmbainis.Dual.exists_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:170:0: 'AaronsonAmbainis.Dual.cover_iff_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:171:0: 'AaronsonAmbainis.Dual.empty_nonpos_of_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:172:0: 'AaronsonAmbainis.Dual.packingBound_iff_rowBoundPM' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:173:0: 'AaronsonAmbainis.Dual.rowBoundPM_of_rowBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:174:0: 'AaronsonAmbainis.Dual.packingBound_of_rowBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:178:0: mainTheorem_of_influence : InfluenceBound → SensitivityBound → RowBoundPM → MainTheorem
+info: AaronsonAmbainis/AxiomReport.lean:180:0: meanIncrementDegree_of_meanIncrement : MeanIncrementBound → RowBoundPM → MeanIncrementDegreeBound
+info: AaronsonAmbainis/AxiomReport.lean:182:0: mainTheoremImproved_of_influence : InfluenceBound → SensitivityBound → RowBound → MainTheoremImproved
+info: AaronsonAmbainis/AxiomReport.lean:184:0: 'AaronsonAmbainis.mainTheorem_of_influence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:185:0: 'AaronsonAmbainis.meanIncrementDegree_of_meanIncrement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:186:0: 'AaronsonAmbainis.rows_of_rowBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:187:0: 'AaronsonAmbainis.mainTheoremImproved_of_influence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:197:0: 'AaronsonAmbainis.Bridge.aa_hyps_dict' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:198:0: 'AaronsonAmbainis.Bridge.aa_hyps_satisfiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:199:0: 'AaronsonAmbainis.Bridge.aa_conclusion_dict' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:200:0: 'AaronsonAmbainis.Bridge.variance_dict' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:201:0: 'AaronsonAmbainis.Bridge.inflR_dict_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:202:0: 'AaronsonAmbainis.Bridge.rowBound_conclusion_dict' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:203:0: 'AaronsonAmbainis.Bridge.hasDegreeLE_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:204:0: 'AaronsonAmbainis.Bridge.hasDegreeLE_zero_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:205:0: 'AaronsonAmbainis.Bridge.dict_not_hasDegreeLE_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:206:0: 'AaronsonAmbainis.Bridge.hasDegreeLE_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:207:0: 'AaronsonAmbainis.Bridge.hasDegreeLE_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:208:0: 'AaronsonAmbainis.Bridge.diffSet_flipSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:209:0: 'AaronsonAmbainis.Bridge.flipSet_diffSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:210:0: 'AaronsonAmbainis.Bridge.hasDegreeLE_iff_fourier' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:211:0: 'AaronsonAmbainis.Bridge.hasDegreeLE_chi_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:212:0: 'AaronsonAmbainis.Bridge.parity_not_hasDegreeLE' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:213:0: 'AaronsonAmbainis.Bridge.rowBound_iff_fin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:214:0: 'AaronsonAmbainis.Bridge.hasDegreeLE_iff_01' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:215:0: 'AaronsonAmbainis.Bridge.hasDegreeLE_iff_poly_zo' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:216:0: 'AaronsonAmbainis.Bridge.hasDegreeLE_iff_poly_pm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:217:0: 'AaronsonAmbainis.Bridge.rowBound_iff_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:218:0: 'AaronsonAmbainis.Bridge.rowBound_iff_printedML' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:219:0: 'AaronsonAmbainis.Bridge.weights_nonneg_of_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:220:0: 'AaronsonAmbainis.Bridge.rowBound_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:221:0: 'AaronsonAmbainis.Bridge.aa_hyps_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:222:0: 'AaronsonAmbainis.Bridge.variance_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:223:0: 'AaronsonAmbainis.Bridge.inflR_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:224:0: 'AaronsonAmbainis.Bridge.variance_le_quarter' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:225:0: 'AaronsonAmbainis.Bridge.variance_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:226:0: 'AaronsonAmbainis.Bridge.zo_of_mainBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:227:0: 'AaronsonAmbainis.Bridge.pm_of_mainBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:228:0: 'AaronsonAmbainis.Bridge.sqrt_form_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:229:0: 'AaronsonAmbainis.Bridge.ratio_pow_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:230:0: 'AaronsonAmbainis.Bridge.pm_sq_of_mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:231:0: 'AaronsonAmbainis.Bridge.pm_sqrt_of_mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:232:0: 'AaronsonAmbainis.Bridge.zo_sq_of_mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:233:0: 'AaronsonAmbainis.Bridge.zo_sqrt_of_mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:234:0: 'AaronsonAmbainis.Bridge.zo_pow_of_mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:235:0: 'AaronsonAmbainis.Bridge.zo_sq_of_mainTheoremImproved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:236:0: 'AaronsonAmbainis.Bridge.zo_sqrt_of_mainTheoremImproved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:237:0: 'AaronsonAmbainis.Bridge.explicitBound_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:238:0: 'AaronsonAmbainis.Bridge.explicitBoundPM_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/AxiomReport.lean:239:0: 'AaronsonAmbainis.Bridge.explicitBoundImproved_sq_of_fbsDegreeBound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [8789/8790] Built AaronsonAmbainis (4.1s)
+Build completed successfully (8790 jobs).

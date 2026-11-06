@@ -1,0 +1,45 @@
+./scripts/run_comparator_unsandboxed.sh
+run_comparator_unsandboxed.sh: NO SANDBOX. This run tests the setup and certifies nothing.
+Building AaronsonAmbainis.Comparator.Challenge
+fake_landrun.sh: NO SANDBOX, running: lake build AaronsonAmbainis.Comparator.Challenge
+⚠ [8707/8707] Built AaronsonAmbainis.Comparator.Challenge
+warning: AaronsonAmbainis/Comparator/Challenge.lean:23:8: declaration uses `sorry`
+warning: AaronsonAmbainis/Comparator/Challenge.lean:27:8: declaration uses `sorry`
+warning: AaronsonAmbainis/Comparator/Challenge.lean:31:8: declaration uses `sorry`
+warning: AaronsonAmbainis/Comparator/Challenge.lean:35:8: declaration uses `sorry`
+Build completed successfully (8707 jobs).
+Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, AaronsonAmbainisComparator.aaronson_ambainis, AaronsonAmbainisComparator.aaronson_ambainis_explicit, AaronsonAmbainisComparator.aaronson_ambainis_pm, AaronsonAmbainisComparator.aaronson_ambainis_of_fbsDegreeBound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from AaronsonAmbainis.Comparator.Challenge
+Building AaronsonAmbainis.Comparator.Solution
+fake_landrun.sh: NO SANDBOX, running: lake build AaronsonAmbainis.Comparator.Solution
+ℹ [8778/8780] Built AaronsonAmbainis.Bridge.Capstone
+info: AaronsonAmbainis/Bridge/Capstone.lean:100:0: AaronsonAmbainis.mainTheorem : AaronsonAmbainis.MainTheorem
+info: AaronsonAmbainis/Bridge/Capstone.lean:101:0: AaronsonAmbainis.mainTheoremImproved_of_rowBound : AaronsonAmbainis.RowBound → AaronsonAmbainis.MainTheoremImproved
+info: AaronsonAmbainis/Bridge/Capstone.lean:103:0: AaronsonAmbainis.Bridge.explicitBound : AaronsonAmbainis.ExplicitBound
+info: AaronsonAmbainis/Bridge/Capstone.lean:104:0: AaronsonAmbainis.Bridge.explicitBoundImproved_of_fbsDegreeBound : AaronsonAmbainis.FbsDegreeBound →
+  AaronsonAmbainis.ExplicitBoundImproved
+info: AaronsonAmbainis/Bridge/Capstone.lean:106:0: 'AaronsonAmbainis.mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:107:0: 'AaronsonAmbainis.mainTheoremImproved_of_rowBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:108:0: 'AaronsonAmbainis.Bridge.explicitBound_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:109:0: 'AaronsonAmbainis.Bridge.explicitBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:110:0: 'AaronsonAmbainis.Bridge.printedConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:111:0: 'AaronsonAmbainis.Bridge.explicitBoundPM_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:112:0: 'AaronsonAmbainis.Bridge.explicitBoundPM' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:113:0: 'AaronsonAmbainis.Bridge.explicitBoundImproved_sq_of_fbsDegreeBound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: AaronsonAmbainis/Bridge/Capstone.lean:114:0: 'AaronsonAmbainis.Bridge.explicitBoundImproved_of_fbsDegreeBound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8779/8780] Built AaronsonAmbainis.Main
+info: AaronsonAmbainis/Main.lean:53:0: 'AaronsonAmbainis.aaronson_ambainis' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Main.lean:54:0: 'AaronsonAmbainis.aaronson_ambainis_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Main.lean:55:0: 'AaronsonAmbainis.aaronson_ambainis_pm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: AaronsonAmbainis/Main.lean:56:0: 'AaronsonAmbainis.aaronson_ambainis_of_fbsDegreeBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8780 jobs).
+Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, AaronsonAmbainisComparator.aaronson_ambainis, AaronsonAmbainisComparator.aaronson_ambainis_explicit, AaronsonAmbainisComparator.aaronson_ambainis_pm, AaronsonAmbainisComparator.aaronson_ambainis_of_fbsDegreeBound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from AaronsonAmbainis.Comparator.Solution
+Running nanoda kernel on solution
+fake_landrun.sh: NO SANDBOX, running: nanoda_bin /tmp/tmp.XXnYQ0ni
+Nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

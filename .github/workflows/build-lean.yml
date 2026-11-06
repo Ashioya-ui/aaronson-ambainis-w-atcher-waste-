@@ -1,0 +1,92 @@
+name: Build Lean formalization
+
+# The library is built, its axioms are reported, and its declarations are replayed through the
+# kernel. The run is started by a change to a file that these checks read.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'AaronsonAmbainis/**'
+      - 'AaronsonAmbainis.lean'
+      - 'scripts/**'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - 'lean-toolchain'
+      - 'Makefile'
+      - '.github/workflows/build-lean.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'AaronsonAmbainis/**'
+      - 'AaronsonAmbainis.lean'
+      - 'scripts/**'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - 'lean-toolchain'
+      - 'Makefile'
+      - '.github/workflows/build-lean.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A run in progress is never cancelled by a later push; the later run waits for it.
+concurrency:
+  group: build-lean-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Show the Lean version
+        run: lean --version
+
+      - name: Check the project-local imports
+        run: make imports
+
+      - name: Static audit of the sources
+        run: make audit
+
+      - name: Fetch the Mathlib build cache
+        run: lake exe cache get
+
+      - name: Build
+        run: |
+          set -o pipefail
+          lake build 2>&1 | tee build.log
+
+      - name: Axiom report
+        run: make axioms
+
+      # leanchecker starts one task for each module, and each task loads the imports of its
+      # module. Two tasks at a time need more memory than this machine has, so the modules
+      # are replayed one after the other.
+      - name: Replay the project through the kernel
+        env:
+          LEAN_NUM_THREADS: 1
+        run: make replay
+
+      - name: Upload the reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: lean-reports
+          path: |
+            build.log
+            axiom-report.txt
+            notes/source-audit.json
+          if-no-files-found: warn

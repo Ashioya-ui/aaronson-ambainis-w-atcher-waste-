@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you reference this proof, paper, or formalization, please cite it as below."
+title: "A proof of the Aaronson–Ambainis conjecture, with a Lean 4 formalization"
+version: 1.1.0
+authors:
+  - family-names: "Turturean"
+    given-names: "David"
+    affiliation: "PSI"
+    email: "david@psi.inc"
+date-released: 2026-11-06
+license: Apache-2.0
+repository-code: "https://github.com/physical-superintelligence/aaronson-ambainis"
+abstract: >-
+  A bounded polynomial of degree at most d on the discrete cube with variance
+  at least epsilon has a variable of influence at least (epsilon/d)^7, as
+  conjectured by Aaronson and Ambainis. This repository contains the paper
+  and a Lean 4 formalization against Mathlib v4.33.0 whose final statement
+  uses only Mathlib definitions.
+keywords:
+  - "Aaronson–Ambainis conjecture"
+  - "influence"
+  - "bounded polynomials"
+  - "Boolean functions"
+  - "fractional block sensitivity"
+  - "quantum query complexity"
+  - "Lean 4"
+  - "formal verification"
