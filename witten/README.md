@@ -28,7 +28,17 @@ Instanton number 2 is an SU(5) field with U(1) fluxes along H = diag(1, −1, 0,
 
 Sampler, instanton number 0 (β = 120, ε = 0.35, 60 sweeps): 61,440 proposals, 3,979 accepted, 4,074 refused for leaving the admissible set, 5,907 cleared by the margin rule without a check. Instanton number 2 (β = 200, ε = 0.6): 61,440 proposals, 10,639 accepted, 432 refused, 29,562 cleared by the margin rule. The instanton number did not change.
 
-FERMIONS_PLACEHOLDER
+### Fermions: no doubling (Witten, section 4) and the zero modes of section 2.3
+
+On the instanton-number-2 field, the lowest eigenvalues of D†D in each chirality, with Witten's Laplace-like discretisation and with the naive lattice Weyl operator (fermions antiperiodic):
+
+| Representation | Witten's operator: zero modes per chirality | First nonzero eigenvalue | Naive lattice: zero modes per chirality |
+| --- | --- | --- | --- |
+| 5̄ | 0 and 2 | 0.187 | 16 and 16 |
+| 10 | 0 and 6 | 0.184 | 48 and 48 |
+| 5̄ ⊕ 10 | **0 and 8: index 8 = 4 × instanton number** | | 64 and 64: index 0 |
+
+Witten's operator gives the index the theory requires: 2 for the 5̄, 6 for the 10, 8 for one Standard Model generation in instanton number 2, all of one chirality. The naive operator gives 16 copies with alternating chirality, which cancel to index 0: the doubling problem. The near-zero eigenvalues of Witten's operator are below 10⁻³, against a gap of 0.18.
 
 ## Run it
 
