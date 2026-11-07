@@ -1,0 +1,47 @@
+{
+ "stage": "A",
+ "sampler": {
+  "proposals": 61440,
+  "accepted": 3979,
+  "refused_inadmissible": 4074,
+  "cleared_by_margin": 5907,
+  "checked_exactly": 55533
+ },
+ "coarse_max_plaquette_dev": 0.3499958272703792,
+ "interp_landau": {
+  "2": {
+   "iterations": 153,
+   "max_force": 9.606595504179888e-10
+  },
+  "3": {
+   "iterations": 71,
+   "max_force": 9.59554039117464e-10
+  },
+  "4": {
+   "iterations": 44,
+   "max_force": 8.505409773512007e-10
+  }
+ },
+ "holonomy_error": 9.089943068816634e-15,
+ "fine_max_dev_times_m2": 0.3516939173847546,
+ "Q": 8.636273100498598e-05,
+ "gauge_cov_after_landau_max_diff": 1.5531997741754898e-11,
+ "Q_after_gauge_transform": 8.636273094624874e-05,
+ "interp_raw_haar_gauge": {
+  "2": {
+   "iterations": 210,
+   "max_force": 9.156007613608509e-10
+  },
+  "3": {
+   "iterations": 103,
+   "max_force": 8.26864124539991e-10
+  },
+  "4": {
+   "iterations": 64,
+   "max_force": 9.282410789956695e-10
+  }
+ },
+ "gauge_cov_raw_haar_max_diff": 9.724692369495113e-11,
+ "holonomy_error_raw": 4.288393621505008e-15,
+ "seconds": 87.2
+}

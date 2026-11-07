@@ -1,0 +1,30 @@
+{
+ "stage": "B",
+ "flux_only_max_plaquette_dev": 0.3901806440322568,
+ "sampler": {
+  "proposals": 61440,
+  "accepted": 10639,
+  "refused_inadmissible": 432,
+  "cleared_by_margin": 29562,
+  "checked_exactly": 31878
+ },
+ "coarse_max_plaquette_dev": 0.5998778790858879,
+ "interp": {
+  "2": {
+   "iterations": 217,
+   "max_force": 8.987144733411667e-10
+  },
+  "3": {
+   "iterations": 97,
+   "max_force": 8.442525697159308e-10
+  },
+  "4": {
+   "iterations": 57,
+   "max_force": 9.919018962771254e-10
+  }
+ },
+ "holonomy_error": 7.612204599643611e-15,
+ "fine_max_dev_times_m2": 0.6086685226777704,
+ "Q": 1.9772060685511903,
+ "seconds": 37.8
+}
