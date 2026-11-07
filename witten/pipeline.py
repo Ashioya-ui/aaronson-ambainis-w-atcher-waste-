@@ -320,6 +320,7 @@ def laplace_like(WR, chir):
     for mu in range(4):
         xp = sh(S, mu).ravel()
         B = -np.einsum("ab,xij->xaibj", I2, WR[mu].reshape(V, d, d)).reshape(V, nb, nb)
+        B = B * bc_sign(Lf, mu)[:, None, None]
         blocks += [(x, xp, B), (xp, x, dag(B))]
     H = _assemble(blocks, V, nb)
     assert abs(H - H.conj().T).max() < 1e-10
@@ -337,9 +338,17 @@ def naive_weyl(WR):
     for mu in range(4):
         xp = sh(S, mu).ravel()
         Wm = WR[mu].reshape(V, d, d)
-        blocks += [(x, xp, 0.5 * np.einsum("ab,xij->xaibj", EPLUS[mu], Wm).reshape(V, nb, nb)),
-                   (xp, x, -0.5 * np.einsum("ab,xij->xaibj", EPLUS[mu], dag(Wm)).reshape(V, nb, nb))]
+        sg = bc_sign(Lf, mu)[:, None, None]
+        blocks += [(x, xp, sg * 0.5 * np.einsum("ab,xij->xaibj", EPLUS[mu], Wm).reshape(V, nb, nb)),
+                   (xp, x, sg * -0.5 * np.einsum("ab,xij->xaibj", EPLUS[mu], dag(Wm)).reshape(V, nb, nb))]
     return _assemble(blocks, V, nb)
+
+
+def bc_sign(Lf, mu):
+    """Antiperiodic fermions: hops that wrap around the torus in direction mu get a minus sign.
+    This removes the constant zero modes of colour components the field does not touch; the index
+    does not depend on the spin structure."""
+    return np.where(np.indices((Lf,) * 4)[mu].ravel() == Lf - 1, -1.0, 1.0)
 
 
 def lowest(H, k):
